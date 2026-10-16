@@ -1,4 +1,7 @@
 class_name Bigbrown extends Area2D
+## This is the base Enemy Class.
+## It declares movement and overlap funtionality
+
 
 @export var speed = 150
 

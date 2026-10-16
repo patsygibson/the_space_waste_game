@@ -4,8 +4,10 @@ extends CharacterBody2D
 signal laser_shot(laser_scene, location)
 
 @export var speed = 300.0
-
+@export var score_label: Label
+@export var score = 0
 @onready var muzzle = $Muzzle
+
 
 var laser_scene = preload("res://scenes/laser.tscn")
 
@@ -32,3 +34,10 @@ func shoot():
 
 func die():
 	queue_free()
+
+func update_score(value: int) -> void:
+	score += value
+	if score_label:
+		score_label.text = "Score: " + str(score)
+	else:
+		print("NO SCORE LABEL ASSIGNED")

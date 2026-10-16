@@ -6,14 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bh6kra3wieuia" path="res://scenes/laser.tscn" id="3_sugp2"]
 [ext_resource type="FontFile" uid="uid://cki8bqwisf8qh" path="res://assets/Xolonium-Regular.ttf" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://hvq3hsmkunp2" path="res://scripts/score_label.gd" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/trash.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1683689896]
 script = ExtResource("1_0wfyh")
 metadata/_edit_vertical_guides_ = [-434.0]
 
-[node name="Player" parent="." unique_id=1104090414 groups=["player"] instance=ExtResource("2_sugp2")]
+[node name="Player" parent="." unique_id=1104090414 node_paths=PackedStringArray("score_label") groups=["player"] instance=ExtResource("2_sugp2")]
 position = Vector2(270, 850)
 collision_mask = 0
+score_label = NodePath("../UI/ScoreLabel")
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=1460920092]
 position = Vector2(270, 850)
@@ -43,3 +45,7 @@ offset_bottom = 41.0
 theme_override_fonts/font = ExtResource("5_tefeu")
 text = "Score: 0"
 script = ExtResource("6_o6xl0")
+
+[node name="trash" parent="." unique_id=216112548 instance=ExtResource("7_o6xl0")]
+position = Vector2(388, 108)
+score_value = 1
