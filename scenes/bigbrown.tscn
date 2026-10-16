@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dvkg13qbh3dfe"]
+
+[ext_resource type="Script" uid="uid://p86syyad0vha" path="res://scenes/bigbrown.gd" id="1_8pi2v"]
+[ext_resource type="Texture2D" uid="uid://bgortyss22lwg" path="res://assets/bigbrown.png" id="2_v7c86"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uu1al"]
+radius = 45.0
+height = 90.0
+
+[node name="bigbrown" type="Area2D" unique_id=217626966]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_8pi2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=530132345]
+texture = ExtResource("2_v7c86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2141742905]
+shape = SubResource("CapsuleShape2D_uu1al")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1822382112]
+position = Vector2(0, -75)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

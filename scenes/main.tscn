@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://3y4but4rcfc8"]
+
+[ext_resource type="Script" uid="uid://cqg8yv48hs8tm" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/bigbrown.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dqxptlgje4sl5" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bh6kra3wieuia" path="res://scenes/laser.tscn" id="3_sugp2"]
+
+[node name="Main" type="Node2D" unique_id=1683689896]
+script = ExtResource("1_0wfyh")
+metadata/_edit_vertical_guides_ = [-434.0]
+
+[node name="Player" parent="." unique_id=1104090414 groups=["player"] instance=ExtResource("2_sugp2")]
+position = Vector2(270, 850)
+collision_mask = 0
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=1460920092]
+position = Vector2(270, 850)
+
+[node name="LaserContainer" type="Node2D" parent="." unique_id=894339081]
+
+[node name="Laser" parent="LaserContainer" unique_id=836802162 instance=ExtResource("3_sugp2")]
+position = Vector2(270, 815)
+
+[node name="bigbrown" parent="." unique_id=217626966 instance=ExtResource("2_jyhfs")]
+position = Vector2(100, 170)
