@@ -7,10 +7,15 @@
 [ext_resource type="FontFile" uid="uid://cki8bqwisf8qh" path="res://assets/Xolonium-Regular.ttf" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://hvq3hsmkunp2" path="res://scripts/score_label.gd" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/trash.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://c3dn5s36e51ky" path="res://scenes/asteroid.tscn" id="8_tipki"]
 
 [node name="Main" type="Node2D" unique_id=1683689896]
 script = ExtResource("1_0wfyh")
+enemy_scenes = Array[PackedScene]([ExtResource("2_jyhfs"), ExtResource("8_tipki"), ExtResource("7_o6xl0")])
 metadata/_edit_vertical_guides_ = [-434.0]
+
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=590670625]
+autostart = true
 
 [node name="Player" parent="." unique_id=1104090414 node_paths=PackedStringArray("score_label") groups=["player"] instance=ExtResource("2_sugp2")]
 position = Vector2(270, 850)
@@ -24,9 +29,6 @@ position = Vector2(270, 850)
 
 [node name="Laser" parent="LaserContainer" unique_id=836802162 instance=ExtResource("3_sugp2")]
 position = Vector2(270, 815)
-
-[node name="bigbrown" parent="." unique_id=217626966 instance=ExtResource("2_jyhfs")]
-position = Vector2(100, 170)
 
 [node name="UI" type="Control" parent="." unique_id=195138154]
 layout_mode = 3
@@ -46,6 +48,6 @@ theme_override_fonts/font = ExtResource("5_tefeu")
 text = "Score: 0"
 script = ExtResource("6_o6xl0")
 
-[node name="trash" parent="." unique_id=216112548 instance=ExtResource("7_o6xl0")]
-position = Vector2(388, 108)
-score_value = 1
+[node name="EnemyContainer" type="Node2D" parent="." unique_id=804151607]
+
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

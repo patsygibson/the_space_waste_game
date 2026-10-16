@@ -1,7 +1,10 @@
 extends Node2D
+@export var enemy_scenes: Array[PackedScene] = []
 
 @onready var player_spawn_pos = $PlayerSpawnPos
 @onready var laser_container = $LaserContainer
+@onready var timer = $EnemySpawnTimer
+@onready var enemy_container = $EnemyContainer
 
 var player = null
 
@@ -27,6 +30,9 @@ func _on_player_laser_shot(laser_scene, location):
 	laser.global_position = location
 	laser_container.add_child(laser)
 	
-#func _on_mob_shot():
-	#score += 1
-	#text = "Score: 5s" % score
+
+func _on_enemy_spawn_timer_timeout():
+	var e = enemy_scenes.pick_random().instantiate() #Connected 'timeout' to '_on_enemy_spawn_timer_timeout'. This is so it picks a random packed scene within the array oof enemy_scenes.
+	e.global_position = Vector2(randf_range(50, 500), 50)
+	enemy_container.add_child(e)
+	
