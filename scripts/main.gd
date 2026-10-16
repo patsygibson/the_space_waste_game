@@ -33,6 +33,6 @@ func _on_player_laser_shot(laser_scene, location):
 
 func _on_enemy_spawn_timer_timeout():
 	var e = enemy_scenes.pick_random().instantiate() #Connected 'timeout' to '_on_enemy_spawn_timer_timeout'. This is so it picks a random packed scene within the array oof enemy_scenes.
-	e.global_position = Vector2(randf_range(50, 500), 50)
+	e.global_position = Vector2(randf_range(50, 500), -50)
 	enemy_container.add_child(e)
 	

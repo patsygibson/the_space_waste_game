@@ -15,5 +15,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body is Player:
 		body.update_score(score_value)
-		print("TRASH HIT PLAYER. New Score: ", body.score)
+		print("New Score: ", body.score)
 		die()

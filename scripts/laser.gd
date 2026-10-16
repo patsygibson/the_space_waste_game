@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var speed = 600
+@export var damage = 1
 
 func _physics_process(delta):
 	global_position.y += -speed * delta #delta because we want to add to each frame independent 
@@ -14,5 +15,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_area_entered(area):
 	if area is Bigbrown:
-		area.die()
+		area.take_damage(damage)
 		queue_free()

@@ -7,6 +7,7 @@
 [node name="trash" unique_id=217626966 instance=ExtResource("1_3xixx")]
 script = ExtResource("2_2cq4d")
 score_value = 1
+hp = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=530132345]
 texture = ExtResource("2_exrr5")

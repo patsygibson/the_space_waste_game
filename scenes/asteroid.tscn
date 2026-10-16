@@ -6,6 +6,7 @@
 [node name="asteroid" unique_id=217626966 instance=ExtResource("1_akfqu")]
 scale = Vector2(0.5, 0.5)
 speed = 400
+hp = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=530132345]
 texture = ExtResource("2_6mo6b")

@@ -4,7 +4,7 @@ class_name Bigbrown extends Area2D
 
 
 @export var speed = 150
-
+@export var hp = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position.y += speed * delta
@@ -21,3 +21,7 @@ func _on_body_entered(body):
 		if not body.get_node("Shield").visible:
 			body.die() 
 # If the shield is not visible, then the player dies
+func take_damage(amount):
+	hp -= amount
+	if hp <= 0:
+		die()
