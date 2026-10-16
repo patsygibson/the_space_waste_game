@@ -25,6 +25,13 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="The_Space_Waste_Game"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "yellow",
+"res://scripts/": "red"
+}
+
 [global_group]
 
 player=""

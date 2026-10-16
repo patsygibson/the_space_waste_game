@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://qaybdxhd7ah6"]
-
-[node name="HUD" type="CanvasLayer" unique_id=1656383675]
-
-[node name="Score" type="Timer" parent="." unique_id=1991070495]
