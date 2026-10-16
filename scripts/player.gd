@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 signal laser_shot(laser_scene, location)
 
-@export var speed = 300
+@export var speed = 300.0
 
 @onready var muzzle = $Muzzle
 
@@ -12,11 +12,14 @@ var laser_scene = preload("res://scenes/laser.tscn")
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
+		
+	if Input.is_action_just_pressed("shield_activation"):
+		$Shield.visible = not $Shield.visible 
+		#If it just was '= true' then the shield would stay even if you click W again
+		
 
 func _physics_process(_delta):
 	var direction = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down"))
-	
-	#print(direction)
 	#Input.get_axis returns in the output dock -1 (for example)  when then the first argument is pressed (example: "move_left" or "move_up" [up in Godot is negative]) 
 	#we can now use this vector2 (direction) to set the velocity of the character body (line 9)
 	
