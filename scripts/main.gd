@@ -17,6 +17,9 @@ func _ready():
 	player.laser_shot.connect(_on_player_laser_shot)
 	player.killed.connect(_on_player_killed)
 
+func save_game():
+	FileAccess.open("user://save.data", FileAccess.WRITE) 
+	#This is so the high score saves in the file so that it saves the high score
 
 #If press input "esc" it calls the method quit that is inside get_tree.
 func _process(_delta):
