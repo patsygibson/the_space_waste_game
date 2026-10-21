@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal laser_shot(laser_scene, location)
+signal killed
 
 @export var speed = 300.0
 @export var score_label: Label
@@ -28,11 +29,13 @@ func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide() #calling this method so that the character body can move
 	#However direction on its own direction isn't enough for the player to move at a considerable speed so we add speed to velocity after declaring it at the top.
+	global_position = global_position.clamp(Vector2.ZERO, get_viewport_rect().size)
 	
 func shoot():
 	laser_shot.emit(laser_scene, muzzle.global_position)
 
 func die():
+	killed.emit()
 	queue_free()
 
 func update_score(value: int) -> void:

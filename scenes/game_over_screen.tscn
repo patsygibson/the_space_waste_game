@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://b4qa7ilesy7ly"]
+
+[ext_resource type="Script" uid="uid://cn2418vltgd8j" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
+bg_color = Color(0.67881256, 0.48279035, 0.9457012, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="FontVariation" id="FontVariation_ca82n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu1al"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vnjk"]
+
+[node name="GameOverScreen" type="Control" unique_id=378264777]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwahs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1944672290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49019608)
+
+[node name="Panel" type="Panel" parent="." unique_id=1421672667]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.5
+offset_top = -161.0
+offset_right = 186.5
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu1al")
+
+[node name="GameOver" type="Label" parent="Panel" unique_id=1990033084]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.11800001
+anchor_right = 0.5
+anchor_bottom = 0.11800001
+offset_left = -49.0
+offset_top = 0.0039978027
+offset_right = 48.0
+offset_bottom = 23.004002
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ca82n")
+theme_override_font_sizes/font_size = 46
+text = "GAME OVER!"
+label_settings = SubResource("LabelSettings_uu1al")
+horizontal_alignment = 1
+
+[node name="HighScore" type="Label" parent="Panel" unique_id=1001959062]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = 64.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_ca82n")
+theme_override_font_sizes/font_size = 46
+text = "High Score: 9999"
+label_settings = SubResource("LabelSettings_4vnjk")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Panel" unique_id=948910042]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34300002
+anchor_right = 0.5
+anchor_bottom = 0.34300002
+offset_left = -64.5
+offset_top = -11.446007
+offset_right = 63.5
+offset_bottom = 11.553993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_ca82n")
+theme_override_font_sizes/font_size = 46
+text = "Score: 9999"
+label_settings = SubResource("LabelSettings_4vnjk")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Panel" unique_id=453384306]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.65400004
+anchor_right = 0.5
+anchor_bottom = 0.65500003
+offset_left = -75.397
+offset_top = -16.588013
+offset_right = 71.5
+offset_bottom = 16.589996
+grow_horizontal = 2
+grow_vertical = 2
+text = "RETRY"
+
+[node name="QuitButton" type="Button" parent="Panel" unique_id=543295067]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.79700005
+anchor_right = 0.48900002
+anchor_bottom = 0.79700005
+offset_left = -74.397
+offset_top = -17.634003
+offset_right = 74.603
+offset_bottom = 17.365997
+grow_horizontal = 2
+grow_vertical = 0
+text = "QUIT"
+
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
