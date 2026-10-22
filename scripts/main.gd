@@ -10,6 +10,12 @@ var high_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var save_file = FileAccess.open("user://save.data", FileAccess.READ) #This is to open the save data file
+	if save_file != null:
+		high_score = save_file.get_32()
+	else:
+		save_game()
+	
 	player = get_tree().get_first_node_in_group("player")
 	assert(player!= null) 
 	player.global_position = player_spawn_pos.global_position
@@ -18,7 +24,8 @@ func _ready():
 	player.killed.connect(_on_player_killed)
 
 func save_game():
-	FileAccess.open("user://save.data", FileAccess.WRITE) 
+	var save_file = FileAccess.open("user://save.data", FileAccess.WRITE) #This Is the File API, this is for whenever you want to save something on your computer.
+	save_file.store_32(high_score)  # ADD THIS TO SUPPORTING DOCUMENT
 	#This is so the high score saves in the file so that it saves the high score
 
 #If press input "esc" it calls the method quit that is inside get_tree.
@@ -46,6 +53,6 @@ func _on_player_killed():
 		
 	gos.set_score(player.score)   #setting the score in the gos 
 	gos.set_HighScore(high_score)
-	
+	save_game()
 	await get_tree().create_timer(1).timeout  #So the Game Over Screen doesn't pop up too quickly when the player dies. 
 	gos.visible = true

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkenlic7687ga"]
+
+[node name="Main Menu" type="Node2D" unique_id=578391734]
+
+[node name="Title" type="Label" parent="." unique_id=779528646]
+offset_left = 206.0
+offset_top = 77.0
+offset_right = 316.0
+offset_bottom = 100.0
+text = "SPACE WASTE!"
