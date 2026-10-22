@@ -1,10 +1,60 @@
 [gd_scene format=3 uid="uid://dkenlic7687ga"]
 
-[node name="Main Menu" type="Node2D" unique_id=578391734]
+[ext_resource type="Script" uid="uid://menws4g1ayfn" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 
-[node name="Title" type="Label" parent="." unique_id=779528646]
-offset_left = 206.0
-offset_top = 77.0
-offset_right = 316.0
-offset_bottom = 100.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
+bg_color = Color(0.4865896, 0.63418204, 0.61989826, 1)
+
+[node name="Main Menu" type="Node2D" unique_id=578391734]
+script = ExtResource("1_l6cm7")
+
+[node name="Panel" type="Panel" parent="." unique_id=2007884780]
+offset_right = 542.0
+offset_bottom = 959.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu1al")
+
+[node name="Title" type="Label" parent="Panel" unique_id=779528646]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.35700002
+anchor_right = 0.5
+anchor_bottom = 0.35700002
+offset_left = -49.0
+offset_top = -7.363037
+offset_right = 61.0
+offset_bottom = 15.636963
+grow_horizontal = 2
+grow_vertical = 2
 text = "SPACE WASTE!"
+
+[node name="Start" type="Button" parent="Panel" unique_id=1123387378]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 393.0
+offset_right = 427.0
+offset_bottom = 451.0
+text = "Start
+"
+
+[node name="Options" type="Button" parent="Panel" unique_id=309112792]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 465.0
+offset_right = 430.0
+offset_bottom = 522.0
+text = "Options
+"
+
+[node name="Quit" type="Button" parent="Panel" unique_id=191084529]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 549.0
+offset_right = 431.0
+offset_bottom = 606.0
+text = "Quit
+"
+
+[connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
