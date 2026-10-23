@@ -8,15 +8,44 @@
 [ext_resource type="FontFile" uid="uid://cki8bqwisf8qh" path="res://assets/Xolonium-Regular.ttf" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://hvq3hsmkunp2" path="res://scripts/score_label.gd" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cw8nnmj1ywidj" path="res://scenes/binbag.tscn" id="6_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://76ucu0quxm3r" path="res://assets/sfx_laser1.ogg" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/trash.tscn" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://odam7v8jjphq" path="res://assets/sfx_lose.ogg" id="8_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://c3dn5s36e51ky" path="res://scenes/asteroid.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://b4qa7ilesy7ly" path="res://scenes/game_over_screen.tscn" id="9_85g3d"]
-[ext_resource type="Texture2D" uid="uid://b3crovw0c1ovd" path="res://assets/background.png" id="10_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://yxwnm5h5m2ce" path="res://assets/background.png" id="10_eb6dy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eb6dy"]
+load_path = "res://.godot/imported/smallstar.png-fc9ad3872a0acc450ea6331804fc7e22.ctex"
+
+[sub_resource type="CurveTexture" id="CurveTexture_eb6dy"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu1al"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -500.0
+initial_velocity_max = -500.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.29999998
+scale_max = 0.29999998
+color = Color(1, 1, 1, 0.7647059)
+alpha_curve = SubResource("CurveTexture_eb6dy")
 
 [node name="Main" type="Node2D" unique_id=1683689896]
 script = ExtResource("1_0wfyh")
 enemy_scenes = Array[PackedScene]([ExtResource("2_jyhfs"), ExtResource("8_tipki"), ExtResource("7_o6xl0"), ExtResource("5_choun"), ExtResource("6_ya4ey")])
 metadata/_edit_vertical_guides_ = [-434.0]
+
+[node name="SFX" type="Node2D" parent="." unique_id=1057939023]
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="SFX" unique_id=1849829662]
+stream = ExtResource("7_a8y0u")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="SFX" unique_id=1681566190]
+stream = ExtResource("8_jkv2x")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1455782672]
 
@@ -35,7 +64,7 @@ offset_top = 18.0
 offset_right = 77.0
 offset_bottom = 41.0
 theme_override_fonts/font = ExtResource("5_tefeu")
-text = "Score: 0"
+text = "Waste: 0"
 script = ExtResource("6_o6xl0")
 
 [node name="GameOverScreen" parent="UILayer" unique_id=378264777 instance=ExtResource("9_85g3d")]
@@ -43,15 +72,24 @@ visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=368365673]
 
-[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=1573332418]
+[node name="Parallax2D" type="ParallaxLayer" parent="ParallaxBackground" unique_id=852275590]
 texture_repeat = 2
+motion_mirroring = Vector2(0, 960)
 
-[node name="starrybg" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=1649002822]
-position = Vector2(268.00003, 478.99997)
-scale = Vector2(0.29641873, 0.3954545)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=1255886611]
+texture_repeat = 2
+position = Vector2(2, 7)
 texture = ExtResource("10_eb6dy")
+centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 1817.3054, 2425.6006)
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="." unique_id=2117935348]
+position = Vector2(268, -50)
+amount = 20
+texture = SubResource("CompressedTexture2D_eb6dy")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_uu1al")
 
 [node name="EnemySpawnTimer" type="Timer" parent="." unique_id=590670625]
 autostart = true

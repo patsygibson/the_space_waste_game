@@ -1,14 +1,13 @@
 class_name Bigbrown extends Area2D
 ## This is the base Enemy Class.
 ## It declares movement and overlap funtionality
-
-
 @export var speed = 150
 @export var hp = 1
+var speedMult = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	global_position.y += speed * delta
 	
+func _process(delta):
+	global_position.y += speed * delta * (Main.scroll_speed*(0.01))
 func die():
 	queue_free()
 

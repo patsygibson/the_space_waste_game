@@ -1,4 +1,6 @@
 extends Node2D
+class_name Main
+
 @export var enemy_scenes: Array[PackedScene] = []
 @onready var player_spawn_pos = $PlayerSpawnPos
 @onready var laser_container = $LaserContainer
@@ -7,9 +9,12 @@ extends Node2D
 @onready var gos = $UILayer/GameOverScreen
 @onready var pb = $ParallaxBackground
 
+@onready var laser_sound = $SFX/LaserSound
+@onready var hit_sound = $SFX/HitSound
 var player = null
 var high_score = 0 
-var scroll_speed = 100
+var speedModifier = 0.1
+static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +23,7 @@ func _ready():
 		high_score = save_file.get_32()
 	else:
 		save_game()
+	#scroll_speed = 100
 	
 	player = get_tree().get_first_node_in_group("player")
 	assert(player!= null) 
@@ -32,19 +38,29 @@ func save_game():
 	#This is so the high score saves in the file so that it saves the high score
 
 #If press input "esc" it calls the method quit that is inside get_tree.
-func _process(_delta):
+func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 #If press input "R" it calls the method reload_current_scene which is inside get_tree.
 	elif Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 	
-	pb.scroll_offset.y = _delta *scroll_speed
+	if timer.wait_time > 0.5:      #setting timer to make difficulty
+		timer.wait_time -= delta* 0.005
+		scroll_speed+=speedModifier
+	elif timer.wait_time < 0.5:
+		timer.wait_time = 0.5
+	
+	pb.scroll_offset.y += delta*scroll_speed
+	if pb.scroll_offset.y >= 960:
+		pb.scroll_offset.y = 0
+	#print(pb.scroll_offset.y)
 	
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
 	laser_container.add_child(laser)
+	laser_sound.play()
 	
 
 func _on_enemy_spawn_timer_timeout():
@@ -53,6 +69,7 @@ func _on_enemy_spawn_timer_timeout():
 	enemy_container.add_child(e)
 	
 func _on_player_killed():
+	hit_sound.play()
 	if player.score > high_score:  #If the player score is greater than the high score then the score becomes the high score.
 		high_score = player.score
 		

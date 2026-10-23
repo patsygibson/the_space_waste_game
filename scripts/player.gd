@@ -41,6 +41,6 @@ func die():
 func update_score(value: int) -> void:
 	score += value
 	if score_label:
-		score_label.text = "Score: " + str(score)
+		score_label.text = "Waste: " + str(score)
 	else:
 		print("NO SCORE LABEL ASSIGNED")
