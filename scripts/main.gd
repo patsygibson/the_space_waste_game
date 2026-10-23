@@ -5,8 +5,11 @@ extends Node2D
 @onready var timer = $EnemySpawnTimer
 @onready var enemy_container = $EnemyContainer
 @onready var gos = $UILayer/GameOverScreen
+@onready var pb = $ParallaxBackground
+
 var player = null
 var high_score = 0 
+var scroll_speed = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +38,8 @@ func _process(_delta):
 #If press input "R" it calls the method reload_current_scene which is inside get_tree.
 	elif Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
+	
+	pb.scroll_offset.y = _delta *scroll_speed
 	
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()

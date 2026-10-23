@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqxptlgje4sl5"]
 
-[ext_resource type="Texture2D" uid="uid://b68u8kjedpuvo" path="res://assets/playerShip1_red.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://r73dvq5erpm0" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://duo3kg7i4fwke" path="res://assets/spaceshit.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bfv2bxe3xcp68" path="res://assets/laserGreen14.png" id="3_qhqgy"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1104090414]
@@ -10,8 +10,8 @@ motion_mode = 1
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2087998052]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_3vyb7")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_qhqgy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=897270629]
 polygon = PackedVector2Array(-22, 12, -24, -3, -6, -6, -4, -19, 4, -19, 6, -6, 24, -3, 23, 12, 3, 18, -4, 18, -21, 13)

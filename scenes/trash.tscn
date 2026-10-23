@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/bigbrown.tscn" id="1_3xixx"]
 [ext_resource type="Script" uid="uid://coqmigde0v30j" path="res://scripts/trash.gd" id="2_2cq4d"]
-[ext_resource type="Texture2D" uid="uid://b68u8kjedpuvo" path="res://assets/playerShip1_red.png" id="2_exrr5"]
+[ext_resource type="Texture2D" uid="uid://cyx71lpsg1leq" path="res://assets/plastic.png" id="3_2cq4d"]
 
 [node name="trash" unique_id=217626966 instance=ExtResource("1_3xixx")]
 script = ExtResource("2_2cq4d")
@@ -10,4 +10,5 @@ score_value = 1
 hp = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=530132345]
-texture = ExtResource("2_exrr5")
+scale = Vector2(2, 2)
+texture = ExtResource("3_2cq4d")

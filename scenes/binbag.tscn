@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cw8nnmj1ywidj"]
+
+[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/trash.tscn" id="1_xus3h"]
+[ext_resource type="Texture2D" uid="uid://blt5qqsdrbfk7" path="res://assets/binbag.png" id="2_odtvp"]
+
+[node name="binbag" unique_id=217626966 instance=ExtResource("1_xus3h")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=530132345]
+texture = ExtResource("2_odtvp")
