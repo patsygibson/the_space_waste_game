@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The_Space_Waste_Game"
-run/main_scene="uid://3y4but4rcfc8"
+run/main_scene="uid://dkenlic7687ga"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -29,7 +29,8 @@ project/assembly_name="The_Space_Waste_Game"
 
 folder_colors={
 "res://assets/": "yellow",
-"res://scripts/": "red"
+"res://scripts/": "red",
+"res://sounds/": "orange"
 }
 
 [global_group]

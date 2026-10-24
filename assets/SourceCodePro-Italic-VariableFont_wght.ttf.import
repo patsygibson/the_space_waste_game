@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cki8bqwisf8qh"
-path="res://.godot/imported/Xolonium-Regular.ttf-019a410794f70e8830282781b6a19e7a.fontdata"
+uid="uid://b6le4v38gouuc"
+path="res://.godot/imported/SourceCodePro-Italic-VariableFont_wght.ttf-6fef3bb7ae7b6ea5fce5d10a73bb7989.fontdata"
 
 [deps]
 
-source_file="res://assets/Xolonium-Regular.ttf"
-dest_files=["res://.godot/imported/Xolonium-Regular.ttf-019a410794f70e8830282781b6a19e7a.fontdata"]
+source_file="res://assets/SourceCodePro-Italic-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/SourceCodePro-Italic-VariableFont_wght.ttf-6fef3bb7ae7b6ea5fce5d10a73bb7989.fontdata"]
 
 [params]
 

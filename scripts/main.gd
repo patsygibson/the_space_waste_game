@@ -18,12 +18,18 @@ static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#fade animation
+	$Fade_transition.show()
+	$Fade_transition/AnimationPlayer.play("Fade_out")
+	
+	#save high score
 	var save_file = FileAccess.open("user://save.data", FileAccess.READ) #This is to open the save data file
 	if save_file != null:
 		high_score = save_file.get_32()
 	else:
 		save_game()
-	#scroll_speed = 100
+		
+	
 	
 	player = get_tree().get_first_node_in_group("player")
 	assert(player!= null) 

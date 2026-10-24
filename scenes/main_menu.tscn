@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dkenlic7687ga"]
 
 [ext_resource type="Script" uid="uid://menws4g1ayfn" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/fade_transition.tscn" id="3_bqqt6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
 bg_color = Color(0.4865896, 0.63418204, 0.61989826, 1)
@@ -9,52 +11,82 @@ bg_color = Color(0.4865896, 0.63418204, 0.61989826, 1)
 script = ExtResource("1_l6cm7")
 
 [node name="Panel" type="Panel" parent="." unique_id=2007884780]
+offset_top = -1.0
 offset_right = 542.0
-offset_bottom = 959.0
+offset_bottom = 958.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_uu1al")
 
 [node name="Title" type="Label" parent="Panel" unique_id=779528646]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.35700002
+anchor_top = 0.32200003
 anchor_right = 0.5
-anchor_bottom = 0.35700002
-offset_left = -49.0
-offset_top = -7.363037
-offset_right = 61.0
-offset_bottom = 15.636963
+anchor_bottom = 0.32200003
+offset_left = -228.0
+offset_top = -18.798035
+offset_right = 252.0
+offset_bottom = 21.201965
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 40
 text = "SPACE WASTE!"
 
 [node name="Start" type="Button" parent="Panel" unique_id=1123387378]
-layout_mode = 0
-offset_left = 121.0
-offset_top = 393.0
-offset_right = 427.0
-offset_bottom = 451.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.44000003
+anchor_right = 0.50600004
+anchor_bottom = 0.44000003
+offset_left = -153.25201
+offset_top = -28.960022
+offset_right = 152.74799
+offset_bottom = 29.039978
+theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Start
 "
 
 [node name="Options" type="Button" parent="Panel" unique_id=309112792]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 465.0
-offset_right = 430.0
-offset_bottom = 522.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.522
+anchor_right = 0.50600004
+anchor_bottom = 0.522
+offset_left = -157.25201
+offset_top = -28.598022
+offset_right = 156.74799
+offset_bottom = 28.401978
+theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Options
 "
 
 [node name="Quit" type="Button" parent="Panel" unique_id=191084529]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 549.0
-offset_right = 431.0
-offset_bottom = 606.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.60200006
+anchor_right = 0.51000005
+anchor_bottom = 0.60200006
+offset_left = -154.42001
+offset_top = -28.318054
+offset_right = 154.57999
+offset_bottom = 28.681946
+theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Quit
 "
+
+[node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("3_bqqt6")]
+visible = false
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 541.0
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=2008763469]
 
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
