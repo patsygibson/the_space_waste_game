@@ -10,7 +10,7 @@ signal killed
 @onready var muzzle = $Muzzle
 
 
-var laser_scene = preload("res://scenes/laser.tscn")
+var laser_scene = preload("res://scenes/characters/laser.tscn")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):

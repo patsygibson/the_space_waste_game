@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cuna33qjwg3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
+bg_color = Color(0.29765096, 0.55529785, 0.4358139, 1)
+
+[node name="Intro Scene" type="Node2D" unique_id=806956093]
+
+[node name="Panel" type="Panel" parent="." unique_id=911085650]
+offset_right = 540.0
+offset_bottom = 960.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu1al")

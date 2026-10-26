@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://c6gemuu0f3uk8"]
+
+[ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://4nsq8b3pj06n" path="res://scripts/locations/options.gd" id="1_yjkok"]
+[ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_2iy26"]
+[ext_resource type="Script" uid="uid://px1rmpno6whi" path="res://scripts/characters/musicslider.gd" id="3_gcwg0"]
+[ext_resource type="AudioStream" uid="uid://s4qygn1g3mns" path="res://sounds/arpmedia-retro-arcade-game-music-577821.mp3" id="4_6eqrd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcmp0"]
+bg_color = Color(0.03208806, 0.3191148, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ca82n"]
+color = Color(0.24112236, 0.50177217, 0.290487, 1)
+grow_begin = 3.0
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xktid"]
+color = Color(0.77777845, 0.29375103, 0.8255314, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3sk8d"]
+color = Color(0.45333493, 0.117181934, 0.48725307, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nks56"]
+
+[node name="Options" type="Node2D" unique_id=2101241839]
+script = ExtResource("1_yjkok")
+
+[node name="Panel" type="Panel" parent="." unique_id=40579483]
+offset_left = 1.0
+offset_right = 541.0
+offset_bottom = 960.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu1al")
+
+[node name="Options" type="Label" parent="Panel" unique_id=2012175401]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.102000006
+anchor_right = 0.5
+anchor_bottom = 0.102000006
+offset_left = -143.0
+offset_top = -19.920006
+offset_right = 137.0
+offset_bottom = 20.079994
+theme_override_fonts/font = ExtResource("1_c2u1v")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+horizontal_alignment = 1
+
+[node name="SFX" type="Label" parent="Panel" unique_id=2144206287]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14600001
+anchor_top = 0.245
+anchor_right = 0.14600001
+anchor_bottom = 0.245
+offset_left = -49.840004
+offset_top = -11.200012
+offset_right = 50.159996
+offset_bottom = 10.799988
+theme_override_fonts/font = ExtResource("1_c2u1v")
+theme_override_font_sizes/font_size = 20
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="Music" type="Label" parent="Panel" unique_id=847229399]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.305
+anchor_right = 0.2
+anchor_bottom = 0.305
+offset_left = -65.0
+offset_top = -7.8000183
+offset_right = 35.0
+offset_bottom = 14.199982
+theme_override_fonts/font = ExtResource("1_c2u1v")
+theme_override_font_sizes/font_size = 20
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Brightness" type="Label" parent="Panel" unique_id=786275614]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23700002
+anchor_top = 0.45200002
+anchor_right = 0.23700002
+anchor_bottom = 0.45200002
+offset_left = -99.98001
+offset_top = -10.920013
+offset_right = 100.01999
+offset_bottom = 11.079987
+theme_override_fonts/font = ExtResource("1_c2u1v")
+theme_override_font_sizes/font_size = 20
+text = "Brightness"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="Panel" unique_id=1822419593]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.509
+anchor_top = 0.781
+anchor_right = 0.509
+anchor_bottom = 0.781
+offset_left = -139.86002
+offset_top = -20.76001
+offset_right = 140.13998
+offset_bottom = 20.23999
+theme_override_fonts/font = ExtResource("1_c2u1v")
+text = "Return"
+
+[node name="SFXslider" type="HSlider" parent="Panel" unique_id=2011971639]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.69900006
+anchor_top = 0.25100002
+anchor_right = 0.69900006
+anchor_bottom = 0.25100002
+offset_left = -105.46002
+offset_top = -7.960022
+offset_right = 105.53998
+offset_bottom = 8.039978
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_lcmp0")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_ca82n")
+value = 50.0
+
+[node name="Musicslider" type="HSlider" parent="Panel" unique_id=89293685]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 327.0
+offset_right = 466.0
+offset_bottom = 343.0
+theme_override_styles/slider = SubResource("StyleBoxLine_xktid")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_3sk8d")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_nks56")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_gcwg0")
+audio_bus_name = "Music"
+
+[node name="Brightslider" type="HSlider" parent="Panel" unique_id=1384104111]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 451.0
+offset_right = 493.0
+offset_bottom = 467.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel" unique_id=1076465874]
+stream = ExtResource("4_6eqrd")
+autoplay = true
+bus = &"Music"
+
+[node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("3_2iy26")]
+visible = false
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=1166751710]
+
+[connection signal="pressed" from="Panel/Return" to="." method="_on_return_pressed"]
+[connection signal="value_changed" from="Panel/Musicslider" to="Panel/Musicslider" method="_on_value_changed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

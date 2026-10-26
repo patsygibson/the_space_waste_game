@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://3y4but4rcfc8"]
+
+[ext_resource type="Script" uid="uid://cqg8yv48hs8tm" path="res://scripts/locations/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/bigbrown.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dqxptlgje4sl5" path="res://scenes/characters/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dg3xkc5m8iek5" path="res://scenes/characters/bottle.tscn" id="5_choun"]
+[ext_resource type="Script" uid="uid://hvq3hsmkunp2" path="res://scripts/characters/score_label.gd" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cw8nnmj1ywidj" path="res://scenes/characters/binbag.tscn" id="6_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://76ucu0quxm3r" path="res://sounds/sfx_laser1.ogg" id="7_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/characters/trash.tscn" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://odam7v8jjphq" path="res://sounds/sfx_lose.ogg" id="8_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://c3dn5s36e51ky" path="res://scenes/characters/asteroid.tscn" id="8_tipki"]
+[ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="9_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://yxwnm5h5m2ce" path="res://assets/background.png" id="10_eb6dy"]
+[ext_resource type="Script" uid="uid://cn2418vltgd8j" path="res://scripts/locations/game_over_screen.gd" id="11_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="15_jkv2x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
+bg_color = Color(0.67881256, 0.48279035, 0.9457012, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="FontVariation" id="FontVariation_ca82n"]
+base_font = ExtResource("9_a8y0u")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu1al"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vnjk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eb6dy"]
+load_path = "res://.godot/imported/smallstar.png-fc9ad3872a0acc450ea6331804fc7e22.ctex"
+
+[sub_resource type="CurveTexture" id="CurveTexture_eb6dy"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu1al"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -500.0
+initial_velocity_max = -500.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.29999998
+scale_max = 0.29999998
+color = Color(1, 1, 1, 0.7647059)
+alpha_curve = SubResource("CurveTexture_eb6dy")
+
+[node name="Main" type="Node2D" unique_id=1683689896]
+script = ExtResource("1_0wfyh")
+enemy_scenes = Array[PackedScene]([ExtResource("2_jyhfs"), ExtResource("8_tipki"), ExtResource("7_o6xl0"), ExtResource("5_choun"), ExtResource("6_ya4ey")])
+metadata/_edit_vertical_guides_ = [-434.0]
+
+[node name="SFX" type="Node2D" parent="." unique_id=1057939023]
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="SFX" unique_id=1849829662]
+stream = ExtResource("7_a8y0u")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="SFX" unique_id=1681566190]
+stream = ExtResource("8_jkv2x")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1455782672]
+
+[node name="HUD" type="Control" parent="UILayer" unique_id=195138154]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 108.0
+offset_bottom = 58.0
+
+[node name="ScoreLabel" type="Label" parent="UILayer/HUD" unique_id=944981144]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 87.0
+offset_bottom = 41.0
+theme_override_colors/font_shadow_color = Color(0.95647013, 0.90741086, 0.9262798, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_a8y0u")
+text = "Waste: 0"
+script = ExtResource("6_o6xl0")
+
+[node name="GameOverScreen" type="Control" parent="UILayer" unique_id=378264777]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_a8y0u")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/GameOverScreen" unique_id=1944672290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49019608)
+
+[node name="Panel" type="Panel" parent="UILayer/GameOverScreen" unique_id=1421672667]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.5
+offset_top = -161.0
+offset_right = 186.5
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu1al")
+
+[node name="GameOver" type="Label" parent="UILayer/GameOverScreen/Panel" unique_id=1990033084]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.11800001
+anchor_right = 0.5
+anchor_bottom = 0.11800001
+offset_left = -49.0
+offset_top = 0.0039978027
+offset_right = 48.0
+offset_bottom = 23.004002
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ca82n")
+theme_override_font_sizes/font_size = 46
+text = "GAME OVER!"
+label_settings = SubResource("LabelSettings_uu1al")
+horizontal_alignment = 1
+
+[node name="HighScore" type="Label" parent="UILayer/GameOverScreen/Panel" unique_id=1001959062]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = 64.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_ca82n")
+theme_override_font_sizes/font_size = 46
+text = "High Score: 9999"
+label_settings = SubResource("LabelSettings_4vnjk")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="UILayer/GameOverScreen/Panel" unique_id=948910042]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34300002
+anchor_right = 0.5
+anchor_bottom = 0.34300002
+offset_left = -64.5
+offset_top = -11.446007
+offset_right = 63.5
+offset_bottom = 11.553993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_ca82n")
+theme_override_font_sizes/font_size = 46
+text = "Score: 9999"
+label_settings = SubResource("LabelSettings_4vnjk")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="UILayer/GameOverScreen/Panel" unique_id=453384306]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.65400004
+anchor_right = 0.5
+anchor_bottom = 0.65500003
+offset_left = -76.0975
+offset_top = -5.8200073
+offset_right = 70.7995
+offset_bottom = 27.358032
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_a8y0u")
+text = "RETRY"
+
+[node name="QuitButton" type="Button" parent="UILayer/GameOverScreen/Panel" unique_id=543295067]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.79700005
+anchor_right = 0.48900002
+anchor_bottom = 0.79700005
+offset_left = -75.0975
+offset_top = -8.009979
+offset_right = 73.9025
+offset_bottom = 26.99002
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_a8y0u")
+text = "QUIT"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=368365673]
+
+[node name="Parallax2D" type="ParallaxLayer" parent="ParallaxBackground" unique_id=852275590]
+texture_repeat = 2
+motion_mirroring = Vector2(0, 960)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=1255886611]
+texture_repeat = 2
+position = Vector2(1, 1)
+texture = ExtResource("10_eb6dy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="." unique_id=2117935348]
+position = Vector2(268, -50)
+amount = 20
+texture = SubResource("CompressedTexture2D_eb6dy")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_uu1al")
+
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=590670625]
+autostart = true
+
+[node name="Player" parent="." unique_id=1104090414 node_paths=PackedStringArray("score_label") groups=["player"] instance=ExtResource("2_sugp2")]
+position = Vector2(270, 850)
+collision_mask = 0
+score_label = NodePath("../UILayer/HUD/ScoreLabel")
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=1460920092]
+position = Vector2(270, 850)
+
+[node name="LaserContainer" type="Node2D" parent="." unique_id=894339081]
+
+[node name="EnemyContainer" type="Node2D" parent="." unique_id=804151607]
+
+[node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("15_jkv2x")]
+
+[connection signal="pressed" from="UILayer/GameOverScreen/Panel/RestartButton" to="." method="reset"]
+[connection signal="pressed" from="UILayer/GameOverScreen/Panel/QuitButton" to="UILayer/GameOverScreen" method="_on_quit_button_pressed"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

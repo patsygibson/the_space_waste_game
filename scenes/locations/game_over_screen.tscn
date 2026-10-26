@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4qa7ilesy7ly"]
 
-[ext_resource type="Script" uid="uid://cn2418vltgd8j" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+[ext_resource type="Script" uid="uid://cn2418vltgd8j" path="res://scripts/locations/game_over_screen.gd" id="1_iwahs"]
 [ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_61w2s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]

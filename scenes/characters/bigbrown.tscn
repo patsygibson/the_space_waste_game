@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvkg13qbh3dfe"]
 
-[ext_resource type="Script" uid="uid://p86syyad0vha" path="res://scripts/bigbrown.gd" id="1_8pi2v"]
+[ext_resource type="Script" uid="uid://p86syyad0vha" path="res://scripts/characters/bigbrown.gd" id="1_8pi2v"]
 [ext_resource type="Texture2D" uid="uid://bgortyss22lwg" path="res://assets/bigbrown.png" id="2_v7c86"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uu1al"]

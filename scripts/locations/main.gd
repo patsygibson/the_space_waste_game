@@ -13,7 +13,8 @@ class_name Main
 @onready var hit_sound = $SFX/HitSound
 var player = null
 var high_score = 0 
-var speedModifier = 0.1
+var speedModifier = 0.5
+var default_speed = 100
 static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
@@ -38,10 +39,15 @@ func _ready():
 	player.laser_shot.connect(_on_player_laser_shot)
 	player.killed.connect(_on_player_killed)
 
-func save_game():
+func save_game() -> void:
 	var save_file = FileAccess.open("user://save.data", FileAccess.WRITE) #This Is the File API, this is for whenever you want to save something on your computer.
 	save_file.store_32(high_score)  # ADD THIS TO SUPPORTING DOCUMENT
 	#This is so the high score saves in the file so that it saves the high score
+
+
+func reset() -> void:
+	scroll_speed = default_speed
+	get_tree().reload_current_scene()
 
 #If press input "esc" it calls the method quit that is inside get_tree.
 func _process(delta):
@@ -49,7 +55,7 @@ func _process(delta):
 		get_tree().quit()
 #If press input "R" it calls the method reload_current_scene which is inside get_tree.
 	elif Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
+		reset()
 	
 	if timer.wait_time > 0.5:      #setting timer to make difficulty
 		timer.wait_time -= delta* 0.005
