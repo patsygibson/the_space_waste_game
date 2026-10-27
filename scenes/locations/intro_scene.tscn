@@ -10,7 +10,7 @@ resource_name = "Fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Fade_transition:color")
+tracks/0/path = NodePath("CanvasLayer/Fade_transition2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ resource_name = "Fadou_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Fade_transition:color")
+tracks/0/path = NodePath("CanvasLayer/Fade_transition2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -40,7 +40,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Fade_transition:color")
+tracks/0/path = NodePath("CanvasLayer/Fade_transition2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,15 +72,15 @@ script = ExtResource("1_8smk8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=246114297]
 
-[node name="Fade_transition" parent="CanvasLayer" unique_id=709684755 instance=ExtResource("2_l3u2p")]
+[node name="Fade_transition2" parent="CanvasLayer" unique_id=709684755 instance=ExtResource("2_l3u2p")]
 visible = false
 color = Color(0, 0, 0, 0)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer/Fade_transition" unique_id=224102279]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer/Fade_transition2" unique_id=224102279]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_0gpk1")
 
-[node name="Fade_timer" type="Timer" parent="CanvasLayer/Fade_transition" unique_id=2117995129]
+[node name="Fade_timer" type="Timer" parent="CanvasLayer/Fade_transition2" unique_id=2117995129]
 
 [node name="NPCIcon" type="TextureRect" parent="CanvasLayer" unique_id=1385483940]
 offset_left = 1.0
@@ -90,6 +90,7 @@ offset_bottom = 959.0
 texture = SubResource("PlaceholderTexture2D_km2l0")
 
 [node name="ColleagueIcon" type="TextureRect" parent="CanvasLayer" unique_id=806873157]
+visible = false
 offset_left = 1.0
 offset_top = 3.0
 offset_right = 544.0
@@ -141,5 +142,5 @@ text = ">"
 
 [node name="DialogueContainer" type="Node2D" parent="." unique_id=1357195945]
 
-[connection signal="animation_finished" from="CanvasLayer/Fade_transition/AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/Fade_transition2/AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/DialogueBox/NextButton" to="." method="_on_next_button_pressed"]

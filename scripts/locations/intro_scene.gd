@@ -59,7 +59,9 @@ func _on_next_button_pressed() -> void:
 
 # Begin the fade transition between characters
 func start_character_transition() -> void:
-	$CanvasLayer/Fade_transition/AnimationPlayer2.play("Fade_in")
+	$CanvasLayer/Fade_transition2.show()
+	$CanvasLayer/Fade_transition2/Fade_timer.start()
+	$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fade_in")
 
 
 # Called when an animation finishes
@@ -71,4 +73,4 @@ func _on_animation_player_2_animation_finished(anim_name: StringName) -> void:
 	current_section = 1
 	current_index = 0
 	show_dialogue(current_index)
-	$CanvasLayer/Fade_transition/AnimationPlayer2.play("Fadou_out")
+	$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fadou_out")
