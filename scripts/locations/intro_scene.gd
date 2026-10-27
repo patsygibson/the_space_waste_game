@@ -2,10 +2,13 @@ extends Node2D
 
 @onready var dialogue_text: RichTextLabel = $CanvasLayer/DialogueBox/DialogueText
 @onready var next_button: Button = $CanvasLayer/DialogueBox/NextButton
+@onready var name_input: LineEdit = $CanvasLayer/DialogueBox/NameInput
+@onready var confirm_button: Button = $CanvasLayer/DialogueBox/ConfirmButton
 
 # Current dialogue index and section
 var current_index: int = 0
 var current_section: int = 0
+var player_name: String = ""
 
 # Dr Brown's dialogue
 var first_dialogue: Array[String] = [
@@ -19,17 +22,26 @@ var first_dialogue: Array[String] = [
 
 # Colleague's dialogue
 var colleague_dialogue: Array[String] = [
-"Hello! I'm another Scientist working alongside Dr Brown.",
+"Hello! I'm another Scientist working alongside Dr Brown. *smiles*",
 "Tell me, what's your name?"
 ]
 
 func _ready() -> void:
+	$CanvasLayer/Fade_transition2.show()
+	$CanvasLayer/Fade_transition2/Fade_timer.start()
+	$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fadou_out")
+	
+	name_input.hide()
+	confirm_button.hide()
+	$CanvasLayer/NPCIcon.show()
+	$CanvasLayer/ColleagueIcon.hide()
 	show_dialogue(current_index)
 
 
 # Display the current dialogue line
 func show_dialogue(index: int) -> void:
 	var active_dialogue: Array[String]
+	
 	if current_section == 0:
 		active_dialogue = first_dialogue
 	else:
@@ -37,17 +49,23 @@ func show_dialogue(index: int) -> void:
 	
 	if index >= 0 and index < active_dialogue.size():
 		dialogue_text.text = active_dialogue[index]
+	
+	if current_section == 1 and index == 1:  #Show name input and confirm button 
+		name_input.show()
+		confirm_button.show()
 
 
 # Called when the Next button is pressed
 func _on_next_button_pressed() -> void:
 	var active_dialogue: Array[String]
+	
 	if current_section == 0:
 		active_dialogue = first_dialogue
 	else:
 		active_dialogue = colleague_dialogue
 	
 	current_index += 1
+	
 	if current_index < active_dialogue.size():
 		show_dialogue(current_index)
 	else:
@@ -66,11 +84,25 @@ func start_character_transition() -> void:
 
 # Called when an animation finishes
 func _on_animation_player_2_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "Fade in" and current_section == 0:
+	if anim_name == "Fade_in" and current_section == 0:
 		$CanvasLayer/NPCIcon.hide()
 		$CanvasLayer/ColleagueIcon.show()
+		current_section = 1
+		current_index = 0
+		show_dialogue(current_index)
+		$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fadou_out")
+
+
+
+func _on_confirm_button_pressed() -> void:
+	player_name = name_input.text.strip_edges()
 	
-	current_section = 1
-	current_index = 0
-	show_dialogue(current_index)
-	$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fadou_out")
+	if player_name.is_empty():
+		dialogue_text.text = "Please enter your name first! *smiles*"
+		return
+	
+	dialogue_text.text = "Nice to meet you, " + player_name + "! I will now peg you!"
+	name_input.hide()
+	confirm_button.hide()
+	
+	print("Player name saved: ", player_name) 
