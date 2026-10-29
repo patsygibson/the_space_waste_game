@@ -101,8 +101,9 @@ func _on_confirm_button_pressed() -> void:
 		dialogue_text.text = "Please enter your name first! *smiles*"
 		return
 	
-	dialogue_text.text = "Nice to meet you, " + player_name + "! I will now peg you!"
+	dialogue_text.text = "Nice to meet you, " + player_name + "! I will now show you how it all works!"
 	name_input.hide()
 	confirm_button.hide()
+	$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fadou_out")
 	
 	print("Player name saved: ", player_name) 
