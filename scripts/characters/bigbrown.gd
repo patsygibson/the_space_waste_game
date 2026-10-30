@@ -5,6 +5,7 @@ class_name Bigbrown extends Area2D
 @export var hp = 1
 var speedMult = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 	
 func _process(delta):
 	global_position.y += speed * delta * (Main.scroll_speed*(0.01))
@@ -24,3 +25,7 @@ func take_damage(amount):
 	hp -= amount
 	if hp <= 0:
 		die()
+
+
+func _on_kill_timer_timeout() -> void:
+	queue_free()
