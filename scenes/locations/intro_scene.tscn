@@ -121,6 +121,7 @@ theme_override_constants/outline_size = 2
 theme_override_constants/text_highlight_h_padding = 5
 theme_override_fonts/normal_font = ExtResource("1_gbg58")
 theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 16
 text = "Here is what the NPC will be saying to the player..."
 
 [node name="NextButton" type="Button" parent="CanvasLayer/DialogueBox" unique_id=1141859733]
@@ -161,8 +162,6 @@ root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_0gpk1")
 
 [node name="Fade_timer" type="Timer" parent="CanvasLayer/Fade_transition2" unique_id=2117995129]
-
-[node name="DialogueContainer" type="Node2D" parent="." unique_id=1357195945]
 
 [connection signal="pressed" from="CanvasLayer/DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DialogueBox/ConfirmButton" to="." method="_on_confirm_button_pressed"]
