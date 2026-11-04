@@ -2,7 +2,7 @@ class_name Bigbrown extends Area2D
 ## This is the base Enemy Class.
 ## It declares movement and overlap funtionality
 @export var speed = 150
-@export var hp = 1
+@export var hp = 100
 var speedMult = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 

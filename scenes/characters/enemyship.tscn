@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dscxlhdnqbtj0"]
+
+[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/bigbrown.tscn" id="1_ydbtw"]
+
+[node name="Enemy Ship" unique_id=217626966 instance=ExtResource("1_ydbtw")]

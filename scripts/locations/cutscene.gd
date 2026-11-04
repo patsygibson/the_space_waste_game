@@ -21,7 +21,6 @@ func show_dialogue() -> void:
 		dialogue_text.text = engineer_dialogue[current_index]
 
 func _on_next_button_pressed() -> void:
-	print("button pressed!")
 	current_index +=1
 	
 	if current_index < engineer_dialogue.size():

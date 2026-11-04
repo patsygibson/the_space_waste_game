@@ -46,7 +46,6 @@ func save_game() -> void:
 
 
 func reset() -> void:
-	scroll_speed = default_speed
 	get_tree().reload_current_scene()
 
 #If press input "esc" it calls the method quit that is inside get_tree.
@@ -57,16 +56,6 @@ func _process(delta):
 	elif Input.is_action_just_pressed("reset"):
 		reset()
 	
-	if timer.wait_time > 0.5:      #setting timer to make difficulty
-		timer.wait_time -= delta* 0.005
-		scroll_speed+=speedModifier
-	elif timer.wait_time < 0.5:
-		timer.wait_time = 0.5
-	
-	pb.scroll_offset.y += delta*scroll_speed
-	if pb.scroll_offset.y >= 960:
-		pb.scroll_offset.y = 0
-	#print(pb.scroll_offset.y)
 	
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
