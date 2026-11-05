@@ -42,5 +42,9 @@ func update_score(value: int) -> void:
 	score += value
 	if score_label:
 		score_label.text = "Waste: " + str(score)
+		
+	if score >= 5:
+		get_tree().change_scene_to_file("res://scenes/locations/cutscene.tscn")
+	
 	else:
 		print("NO SCORE LABEL ASSIGNED")

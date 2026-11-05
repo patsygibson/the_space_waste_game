@@ -31,13 +31,13 @@ func _ready():
 		save_game()
 		
 	
-	
 	player = get_tree().get_first_node_in_group("player")
 	assert(player!= null) 
 	player.global_position = player_spawn_pos.global_position
 	#this is so that even if you move the player object within the 2D workspace, if you run the game the player will still spawn in the spawn position
 	player.laser_shot.connect(_on_player_laser_shot)
 	player.killed.connect(_on_player_killed)
+	
 
 func save_game() -> void:
 	var save_file = FileAccess.open("user://save.data", FileAccess.WRITE) #This Is the File API, this is for whenever you want to save something on your computer.
@@ -55,8 +55,17 @@ func _process(delta):
 #If press input "R" it calls the method reload_current_scene which is inside get_tree.
 	elif Input.is_action_just_pressed("reset"):
 		reset()
+	if timer.wait_time > 0.5:      #setting timer to make difficulty
+		timer.wait_time -= delta* 0.005
+		scroll_speed+=speedModifier
+	elif timer.wait_time < 0.5:
+		timer.wait_time = 0.5
 	
-	
+	pb.scroll_offset.y += delta*scroll_speed
+	if pb.scroll_offset.y >= 960:
+		pb.scroll_offset.y = 0
+		#print(pb.scroll_offset.y)
+
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
@@ -77,5 +86,8 @@ func _on_player_killed():
 	gos.set_score(player.score)   #setting the score in the gos 
 	gos.set_HighScore(high_score)
 	save_game()
+	
 	await get_tree().create_timer(1).timeout  #So the Game Over Screen doesn't pop up too quickly when the player dies. 
 	gos.visible = true
+	
+	

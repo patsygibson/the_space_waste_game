@@ -15,11 +15,9 @@ func die():
 
 func _on_body_entered(body):
 	if body is Player:
-		#print("Shield visible: ", body.get_node("Shield").visible)
-		#body.die() #the Player dies
-		#die() #it dies as well
 		if not body.get_node("Shield").visible:
 			body.die() 
+			
 # If the shield is not visible, then the player dies
 func take_damage(amount):
 	hp -= amount

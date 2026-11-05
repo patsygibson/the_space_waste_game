@@ -31,4 +31,4 @@ func _on_next_button_pressed() -> void:
 
 
 func _on_confirm_button_pressed() -> void:
-	queue_free()
+	get_tree().change_scene_to_file("res://scenes/locations/main.tscn")

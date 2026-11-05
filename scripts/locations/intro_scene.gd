@@ -108,3 +108,5 @@ func _on_confirm_button_pressed() -> void:
 	$CanvasLayer/Fade_transition2/AnimationPlayer2.play("Fadou_out")
 	
 	print("Player name saved: ", player_name) 
+	
+	get_tree().change_scene_to_file("res://scenes/locations/main.tscn")
