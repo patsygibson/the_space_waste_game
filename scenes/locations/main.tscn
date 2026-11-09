@@ -242,6 +242,10 @@ position = Vector2(270, 850)
 [node name="EnemyContainer" type="Node2D" parent="." unique_id=804151607]
 
 [node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("15_jkv2x")]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 539.0
+offset_bottom = 957.0
 
 [connection signal="pressed" from="UILayer/GameOverScreen/Panel/RestartButton" to="." method="reset"]
 [connection signal="pressed" from="UILayer/GameOverScreen/Panel/QuitButton" to="UILayer/GameOverScreen" method="_on_quit_button_pressed"]

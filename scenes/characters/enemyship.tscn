@@ -1,5 +1,26 @@
 [gd_scene format=3 uid="uid://dscxlhdnqbtj0"]
 
-[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/bigbrown.tscn" id="1_ydbtw"]
+[ext_resource type="Script" uid="uid://b84ouj8mnnk1k" path="res://scripts/characters/enemyship.gd" id="1_xq7vl"]
+[ext_resource type="Texture2D" uid="uid://dekb02a5clk1c" path="res://assets/EnemyShip.png" id="1_ydbtw"]
 
-[node name="Enemy Ship" unique_id=217626966 instance=ExtResource("1_ydbtw")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uu1al"]
+radius = 79.0
+height = 162.0
+
+[node name="Enemyship" type="Node2D" unique_id=579184589]
+script = ExtResource("1_xq7vl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=655579825]
+scale = Vector2(5, 5)
+texture = ExtResource("1_ydbtw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1157669340]
+position = Vector2(-1, -11)
+shape = SubResource("CapsuleShape2D_uu1al")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=978315777]
+position = Vector2(16, -1)
+rect = Rect2(-32, -122, 32, 24)
+
+[node name="Muzzle" type="Marker2D" parent="VisibleOnScreenNotifier2D" unique_id=872927974]
+position = Vector2(-16, 37)

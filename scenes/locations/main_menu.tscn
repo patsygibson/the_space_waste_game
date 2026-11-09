@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkenlic7687ga"]
 
-[ext_resource type="Script" uid="uid://menws4g1ayfn" path="res://scripts/locations/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://menws4g1ayfn" path="res://main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_bqqt6"]
 

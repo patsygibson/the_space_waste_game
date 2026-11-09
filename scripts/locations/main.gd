@@ -19,6 +19,7 @@ static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Main scene ready")
 	#fade animation
 	$Fade_transition.show()
 	$Fade_transition/AnimationPlayer.play("Fade_out")
@@ -46,6 +47,7 @@ func save_game() -> void:
 
 
 func reset() -> void:
+	scroll_speed = default_speed
 	get_tree().reload_current_scene()
 
 #If press input "esc" it calls the method quit that is inside get_tree.
@@ -64,7 +66,7 @@ func _process(delta):
 	pb.scroll_offset.y += delta*scroll_speed
 	if pb.scroll_offset.y >= 960:
 		pb.scroll_offset.y = 0
-		#print(pb.scroll_offset.y)
+		
 
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bm6ehk5ito2p5"]
+
+[ext_resource type="Script" uid="uid://b83kga7sk2i66" path="res://scripts/locations/battle_scene.gd" id="1_d6t36"]
+[ext_resource type="Texture2D" uid="uid://yxwnm5h5m2ce" path="res://assets/background.png" id="2_258c2"]
+[ext_resource type="PackedScene" uid="uid://dqxptlgje4sl5" path="res://scenes/characters/player.tscn" id="3_258c2"]
+[ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_rdtk2"]
+
+[node name="Battle_scene" type="Node2D" unique_id=1136460979]
+script = ExtResource("1_d6t36")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1851725338]
+position = Vector2(271, 481)
+texture = ExtResource("2_258c2")
+
+[node name="Player" parent="." unique_id=1104090414 instance=ExtResource("3_258c2")]
+
+[node name="PlayerSpawnPos2" type="Marker2D" parent="." unique_id=602901065]
+
+[node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("3_rdtk2")]

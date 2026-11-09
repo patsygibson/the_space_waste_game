@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://c3dn5s36e51ky"]
 
 [ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/bigbrown.tscn" id="1_akfqu"]
-[ext_resource type="Texture2D" uid="uid://4wrvi3nnbtal" path="res://assets/asteroid.png" id="2_6mo6b"]
-
+[ext_resource type="Texture2D" uid="uid://h2dyxyukdq5" path="res://assets/Assteroid.png" id="2_gr6t6"]
 
 [node name="asteroid" unique_id=217626966 instance=ExtResource("1_akfqu")]
 scale = Vector2(0.5, 0.5)
 speed = 400
-hp = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=530132345]
-texture = ExtResource("2_6mo6b")
+texture = ExtResource("2_gr6t6")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=2141742905]
 scale = Vector2(0.5, 0.5)
