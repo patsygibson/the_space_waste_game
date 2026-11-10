@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bb0nm12o2wcx2"]
+
+[ext_resource type="Script" uid="uid://bn74156rriao5" path="res://scripts/locations/inventory/inventory.gd" id="1_t87p6"]
+[ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_0yi77"]
+[ext_resource type="PackedScene" uid="uid://b286krm7m0vjc" path="res://scenes/locations/inventory/inventory_slot.tscn" id="3_dcud0"]
+
+[node name="Inventory" type="Control" unique_id=313939651]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t87p6")
+
+[node name="Panel" type="Panel" parent="." unique_id=1050260692]
+layout_mode = 0
+offset_left = -267.0
+offset_top = -480.0
+offset_right = 271.0
+offset_bottom = 479.0
+
+[node name="Title" type="Label" parent="Panel" unique_id=579404055]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.07
+anchor_right = 0.514
+anchor_bottom = 0.07
+offset_left = -210.30402
+offset_top = -10.129997
+offset_right = 213.46799
+offset_bottom = 9.870003
+theme_override_fonts/font = ExtResource("2_0yi77")
+theme_override_font_sizes/font_size = 20
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="SlotContainer" type="GridContainer" parent="Panel" unique_id=1351058681]
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -266.5
+offset_right = 231.0
+offset_bottom = 296.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 22
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="InventorySlot" parent="Panel/SlotContainer" unique_id=1348404098 instance=ExtResource("3_dcud0")]
+layout_mode = 2
+
+[node name="InfoText" type="Label" parent="Panel" unique_id=432764372]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.009000001
+anchor_top = 0.845
+anchor_right = 1.0
+anchor_bottom = 0.869
+offset_left = -0.15799952
+offset_top = -0.3550415
+offset_right = -5.0
+offset_bottom = -0.3710327
+grow_horizontal = 2
+grow_vertical = 0
+text = "Contain info about item!"
+horizontal_alignment = 1

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The_Space_Waste_Game"
-run/main_scene="uid://3y4but4rcfc8"
+run/main_scene="uid://bpojtaacbbmcx"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
