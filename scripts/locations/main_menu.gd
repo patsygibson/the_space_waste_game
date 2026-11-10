@@ -28,3 +28,5 @@ func _on_fade_timer_timeout():
 		get_tree().change_scene_to_file("res://scenes/locations/intro_scene.tscn")
 	
 	
+func _on_instructions_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/locations/instructions_panel.tscn")

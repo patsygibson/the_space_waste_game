@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkenlic7687ga"]
 
-[ext_resource type="Script" uid="uid://menws4g1ayfn" path="res://main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://menws4g1ayfn" path="res://scripts/locations/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_bqqt6"]
 
@@ -66,16 +66,33 @@ text = "Options
 [node name="Quit" type="Button" parent="Panel" unique_id=191084529]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.51000005
-anchor_top = 0.60200006
-anchor_right = 0.51000005
-anchor_bottom = 0.60200006
-offset_left = -154.42001
-offset_top = -28.318054
-offset_right = 154.57999
-offset_bottom = 28.681946
+anchor_left = 0.499
+anchor_top = 0.689
+anchor_right = 0.499
+anchor_bottom = 0.689
+offset_left = -152.45801
+offset_top = -28.751038
+offset_right = 156.54199
+offset_bottom = 28.248962
 theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Quit
+"
+
+[node name="Instructions" type="Button" parent="Panel" unique_id=37418625]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.60700005
+anchor_right = 0.5
+anchor_bottom = 0.60700005
+offset_left = -152.0
+offset_top = -28.113037
+offset_right = 157.0
+offset_bottom = 28.886963
+theme_override_fonts/font = ExtResource("2_ekxnf")
+text = "Instructions
+
+
 "
 
 [node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("3_bqqt6")]
@@ -89,4 +106,5 @@ offset_right = 541.0
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Instructions" to="." method="_on_instructions_pressed"]
 [connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

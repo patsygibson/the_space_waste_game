@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://b12v3kcdo2nk7"]
+
+[ext_resource type="Script" uid="uid://cj7xfpivtyffk" path="res://scripts/locations/instructions_panel.gd" id="1_untsg"]
+[ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_qu1ta"]
+[ext_resource type="FontFile" uid="uid://cvqf2pdgvvu5j" path="res://assets/SourceCodePro-VariableFont_wght.ttf" id="3_q5fk5"]
+
+[node name="InstructionsPanel" type="Control" unique_id=2077182490]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_untsg")
+
+[node name="Panel" type="Panel" parent="." unique_id=170035809]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -478.0
+offset_right = 272.0
+offset_bottom = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HowToPlay" type="Label" parent="Panel" unique_id=1951785466]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.177
+anchor_right = 0.5
+anchor_bottom = 0.177
+offset_left = -41.0
+offset_top = -9.097
+offset_right = 49.0
+offset_bottom = 13.903
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_qu1ta")
+theme_override_font_sizes/font_size = 30
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="Panel" unique_id=2095940270]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49600002
+anchor_top = 0.54800004
+anchor_right = 0.49600002
+anchor_bottom = 0.54800004
+offset_left = -280.84802
+offset_top = -288.62805
+offset_right = 265.15198
+offset_bottom = 300.08374
+grow_horizontal = 2
+scale = Vector2(1.0419986, 1.077634)
+theme_override_fonts/font = ExtResource("3_q5fk5")
+theme_override_font_sizes/font_size = 24
+text = "Move right: right button
+Move left: left button
+Move up: up button 
+Move down: down button
+
+To shoot: press space
+To get shield: \"W\" 
+To reset: \"R\"
+To quit: \"Esc\"
+
+For inventory: \"I\"
+
+Collect waste by touching it!
+Dodge and shoot what threatens you."
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="Panel" unique_id=1345651248]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35500002
+anchor_top = 0.82900006
+anchor_right = 0.652
+anchor_bottom = 0.869
+offset_left = -1.9900055
+offset_top = -0.6690674
+offset_right = 6.223999
+offset_bottom = 7.890991
+theme_override_fonts/font = ExtResource("2_qu1ta")
+theme_override_font_sizes/font_size = 25
+text = "Return"
+
+[connection signal="pressed" from="Panel/Return" to="." method="_on_return_pressed"]
