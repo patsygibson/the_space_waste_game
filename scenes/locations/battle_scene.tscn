@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yxwnm5h5m2ce" path="res://assets/background.png" id="2_258c2"]
 [ext_resource type="PackedScene" uid="uid://dqxptlgje4sl5" path="res://scenes/characters/player.tscn" id="3_258c2"]
 [ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_rdtk2"]
+[ext_resource type="PackedScene" uid="uid://dscxlhdnqbtj0" path="res://scenes/characters/enemyship.tscn" id="5_uulkt"]
 
 [node name="Battle_scene" type="Node2D" unique_id=1136460979]
 script = ExtResource("1_d6t36")
@@ -15,5 +16,12 @@ texture = ExtResource("2_258c2")
 [node name="Player" parent="." unique_id=1104090414 instance=ExtResource("3_258c2")]
 
 [node name="PlayerSpawnPos2" type="Marker2D" parent="." unique_id=602901065]
+position = Vector2(268, 809)
 
 [node name="Fade_transition" parent="." unique_id=709684755 instance=ExtResource("3_rdtk2")]
+visible = false
+
+[node name="Enemyship" parent="." unique_id=579184589 instance=ExtResource("5_uulkt")]
+position = Vector2(268, 136)
+
+[node name="LaserContainer" type="Node2D" parent="." unique_id=1966897144]

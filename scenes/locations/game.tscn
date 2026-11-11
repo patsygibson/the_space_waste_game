@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://bpojtaacbbmcx"]
 
 [ext_resource type="Script" uid="uid://d1wy42alghchl" path="res://scripts/locations/game.gd" id="1_2y0tv"]
-[ext_resource type="PackedScene" uid="uid://dkenlic7687ga" path="res://scenes/locations/main_menu.tscn" id="2_on5ra"]
-[ext_resource type="PackedScene" uid="uid://cuna33qjwg3u" path="res://scenes/locations/intro_scene.tscn" id="3_5uss4"]
-[ext_resource type="PackedScene" uid="uid://3y4but4rcfc8" path="res://scenes/locations/main.tscn" id="4_5uss4"]
 
 [node name="Game" type="Node2D" unique_id=1073175128]
 script = ExtResource("1_2y0tv")
-locations = Array[PackedScene]([ExtResource("2_on5ra"), ExtResource("3_5uss4"), ExtResource("4_5uss4")])
