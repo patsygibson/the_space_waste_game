@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bfv2bxe3xcp68" path="res://assets/laserGreen14.png" id="3_qhqgy"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1104090414]
-collision_mask = 2
+collision_mask = 10
 motion_mode = 1
 script = ExtResource("1_g2els")
 

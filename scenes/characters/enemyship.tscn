@@ -7,8 +7,10 @@
 radius = 79.0
 height = 162.0
 
-[node name="Enemyship" type="Node2D" unique_id=579184589]
+[node name="Enemyship" type="Area2D" unique_id=93074292]
 scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_xq7vl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=655579825]
@@ -19,8 +21,14 @@ texture = ExtResource("1_ydbtw")
 shape = SubResource("CapsuleShape2D_uu1al")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=978315777]
-position = Vector2(16, -1)
+position = Vector2(16, 10)
 rect = Rect2(-32, -122, 32, 24)
 
-[node name="Muzzle" type="Marker2D" parent="VisibleOnScreenNotifier2D" unique_id=872927974]
-position = Vector2(-16, 37)
+[node name="Muzzle" type="Marker2D" parent="." unique_id=872927974]
+position = Vector2(-0.5, 56.5)
+
+[node name="Muzzle2" type="Marker2D" parent="." unique_id=1490734627]
+position = Vector2(-54.5, 24.5)
+
+[node name="Muzzle3" type="Marker2D" parent="." unique_id=1148121011]
+position = Vector2(59.5, 19)

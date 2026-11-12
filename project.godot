@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The_Space_Waste_Game"
-run/main_scene="uid://bpojtaacbbmcx"
+run/main_scene="uid://bm6ehk5ito2p5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -94,6 +94,7 @@ Inventory={
 2d_physics/layer_1="player"
 2d_physics/layer_2="bigbrown"
 2d_physics/layer_3="laser"
+2d_physics/layer_4="enemyship"
 
 [physics]
 

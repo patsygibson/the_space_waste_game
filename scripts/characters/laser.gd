@@ -14,6 +14,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_area_entered(area):
-	if area is Bigbrown:
+	if area is Bigbrown or area is Enemyship:
 		area.take_damage(damage)
 		queue_free()
