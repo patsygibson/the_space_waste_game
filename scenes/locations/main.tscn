@@ -30,7 +30,6 @@ base_font = ExtResource("9_a8y0u")
 [sub_resource type="LabelSettings" id="LabelSettings_4vnjk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eb6dy"]
-load_path = "res://.godot/imported/smallstar.png-fc9ad3872a0acc450ea6331804fc7e22.ctex"
 
 [sub_resource type="CurveTexture" id="CurveTexture_eb6dy"]
 

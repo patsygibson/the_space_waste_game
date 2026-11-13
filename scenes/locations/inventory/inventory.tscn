@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="2_0yi77"]
 [ext_resource type="PackedScene" uid="uid://b286krm7m0vjc" path="res://scenes/locations/inventory/inventory_slot.tscn" id="3_dcud0"]
 
-[node name="Inventory" type="Control" unique_id=313939651]
+[node name="Inventory" type="Control" unique_id=313939651 groups=["item"]]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://3b1xthyrxuae"]
 
-[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/bigbrown.tscn" id="1_3xixx"]
+[ext_resource type="PackedScene" uid="uid://dco372m6hlg8e" path="res://scenes/characters/item.tscn" id="1_3xixx"]
 [ext_resource type="Script" uid="uid://coqmigde0v30j" path="res://scripts/characters/trash.gd" id="2_2cq4d"]
 [ext_resource type="Texture2D" uid="uid://cyx71lpsg1leq" path="res://assets/plastic.png" id="3_2cq4d"]
+[ext_resource type="PackedScene" uid="uid://hwmpelf5u1ex" path="res://scenes/characters/components/item_component.tscn" id="3_vfhg8"]
+[ext_resource type="Script" uid="uid://ci4mtomjau473" path="res://scripts/resources/item_data_resource.gd" id="5_g311i"]
 
-[node name="trash" unique_id=217626966 instance=ExtResource("1_3xixx")]
+[sub_resource type="Resource" id="Resource_yvsha"]
+script = ExtResource("5_g311i")
+item_name = "Trash"
+icon = ExtResource("3_2cq4d")
+quantity = 2
+metadata/_custom_type_script = "uid://ci4mtomjau473"
+
+[node name="trash" type="Node2D" unique_id=217626966 node_paths=PackedStringArray("ItemComp") groups=["item"] instance=ExtResource("1_3xixx")]
 script = ExtResource("2_2cq4d")
-score_value = 1
+ItemComp = NodePath("ItemComponent")
 
-[node name="Sprite2D" parent="." index="0" unique_id=530132345]
-scale = Vector2(2, 2)
-texture = ExtResource("3_2cq4d")
+[node name="ItemComponent" parent="." index="0" unique_id=202823851 instance=ExtResource("3_vfhg8")]
+item = SubResource("Resource_yvsha")

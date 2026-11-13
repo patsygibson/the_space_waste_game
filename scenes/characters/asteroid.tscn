@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3dn5s36e51ky"]
 
-[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/bigbrown.tscn" id="1_akfqu"]
+[ext_resource type="PackedScene" uid="uid://dco372m6hlg8e" path="res://scenes/characters/item.tscn" id="1_akfqu"]
 [ext_resource type="Texture2D" uid="uid://h2dyxyukdq5" path="res://assets/Assteroid.png" id="2_gr6t6"]
 
 [node name="asteroid" unique_id=217626966 instance=ExtResource("1_akfqu")]
