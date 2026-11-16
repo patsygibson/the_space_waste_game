@@ -47,5 +47,5 @@ func update_score(value: int) -> void:
 		get_tree().change_scene_to_file("res://scenes/locations/cutscene.tscn")
 	
 	
-	else:
-		print("NO SCORE LABEL ASSIGNED")
+	#else:
+		#print("NO SCORE LABEL ASSIGNED")

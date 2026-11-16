@@ -206,6 +206,12 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("9_a8y0u")
 text = "QUIT"
 
+[node name="Inventory" parent="UILayer" unique_id=313939651 instance=ExtResource("15_pknp3")]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=368365673]
 
 [node name="Parallax2D" type="ParallaxLayer" parent="ParallaxBackground" unique_id=852275590]
@@ -214,7 +220,7 @@ motion_mirroring = Vector2(0, 960)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=1255886611]
 texture_repeat = 2
-position = Vector2(1, 1)
+position = Vector2(5, -1)
 texture = ExtResource("10_eb6dy")
 centered = false
 region_enabled = true
@@ -247,8 +253,6 @@ offset_left = 1.0
 offset_top = -2.0
 offset_right = 539.0
 offset_bottom = 957.0
-
-[node name="Inventory" parent="." unique_id=313939651 instance=ExtResource("15_pknp3")]
 
 [connection signal="pressed" from="UILayer/GameOverScreen/Panel/RestartButton" to="." method="reset"]
 [connection signal="pressed" from="UILayer/GameOverScreen/Panel/QuitButton" to="UILayer/GameOverScreen" method="_on_quit_button_pressed"]

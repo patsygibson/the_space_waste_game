@@ -8,6 +8,7 @@ class_name Main
 @onready var enemy_container = $EnemyContainer
 @onready var gos = $UILayer/GameOverScreen
 @onready var pb = $ParallaxBackground
+@onready var invt = $UILayer/Inventory
 
 @onready var laser_sound = $SFX/LaserSound
 @onready var hit_sound = $SFX/HitSound
@@ -19,7 +20,7 @@ static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Main scene ready")
+
 	#fade animation
 	$Fade_transition.show()
 	$Fade_transition/AnimationPlayer.play("Fade_out")
@@ -57,6 +58,9 @@ func _process(delta):
 #If press input "R" it calls the method reload_current_scene which is inside get_tree.
 	elif Input.is_action_just_pressed("reset"):
 		reset()
+	if Input.is_action_just_pressed("Inventory"):
+		invt.visible = true
+		
 	if timer.wait_time > 0.5:      #setting timer to make difficulty
 		timer.wait_time -= delta* 0.005
 		scroll_speed+=speedModifier
@@ -91,13 +95,4 @@ func _on_player_killed():
 	
 	await get_tree().create_timer(1).timeout  #So the Game Over Screen doesn't pop up too quickly when the player dies. 
 	gos.visible = true
-	
-
-func _Inventory_just_pressed() -> void:
-	if Input.is_action_just_pressed("Inventory"):
-		print("This is working!")
-		get_tree().change_scene_to_file("res://scenes/locations/inventory/inventory.tscn")
-		
-		#ADD LIKE GOS INSTEAD, SET GOS TO VISBLE -> inventory.visible = true
-
 	
