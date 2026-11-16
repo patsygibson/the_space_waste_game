@@ -92,4 +92,12 @@ func _on_player_killed():
 	await get_tree().create_timer(1).timeout  #So the Game Over Screen doesn't pop up too quickly when the player dies. 
 	gos.visible = true
 	
+
+func _Inventory_just_pressed() -> void:
+	if Input.is_action_just_pressed("Inventory"):
+		print("This is working!")
+		get_tree().change_scene_to_file("res://scenes/locations/inventory/inventory.tscn")
+		
+		#ADD LIKE GOS INSTEAD, SET GOS TO VISBLE -> inventory.visible = true
+
 	

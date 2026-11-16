@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b286krm7m0vjc" path="res://scenes/locations/inventory/inventory_slot.tscn" id="3_dcud0"]
 
 [node name="Inventory" type="Control" unique_id=313939651]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

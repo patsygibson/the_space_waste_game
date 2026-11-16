@@ -1,36 +1,33 @@
 class_name Inventory
-extends Node
+extends Control
 var slots: Array[InventorySlot]
 @onready var panel: Panel = get_node("Panel")
 @onready var info_text: Label = get_node("Panel/InfoText")
-@export var itemcomponent: Array[ItemComponent]
+@export var item_component: Array[ItemComponent]
 
 
-func _ready() -> void:
-	Input.MOUSE_MODE_VISIBLE
-
-func get_slot_to_add(itemcomponent) -> InventorySlot:
+func get_slot_to_add(item_component) -> InventorySlot:
 	var empty_slot = null
 	for slot in slots:
-		if slot.itemcomponent == itemcomponent and slot.quantity < itemcomponent.max_stack_size:
+		if slot.item_component == item_component and slot.quantity < item_component.max_stack_size:
 			return slot
-		if slot.itemcomponent == null and empty_slot == null:
+		if slot.item_component == null and empty_slot == null:
 			empty_slot = slot
 	return empty_slot
 
 
-func get_slot_to_remove (itemcomponent):
+func get_slot_to_remove (item_component):
 	var total = 0
 	for slot in slots:
-		if slot.itemcomponent == itemcomponent:
+		if slot.item_component == item_component:
 			total += slot.quantity
 	return total
 
-func get_number_of_item(itemcomponent):
+func get_number_of_item_component(item_component):
 	var total = 0 
 	
 	for slot in slots: 
-		if slot.itemcomponent == itemcomponent:
+		if slot.item_component == item_component:
 			total += slot.quantity
 	return total
 

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://yxwnm5h5m2ce" path="res://assets/background.png" id="10_eb6dy"]
 [ext_resource type="Script" uid="uid://cn2418vltgd8j" path="res://scripts/locations/game_over_screen.gd" id="11_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://bb0nm12o2wcx2" path="res://scenes/locations/inventory/inventory.tscn" id="15_pknp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
 bg_color = Color(0.67881256, 0.48279035, 0.9457012, 1)
@@ -246,6 +247,8 @@ offset_left = 1.0
 offset_top = -2.0
 offset_right = 539.0
 offset_bottom = 957.0
+
+[node name="Inventory" parent="." unique_id=313939651 instance=ExtResource("15_pknp3")]
 
 [connection signal="pressed" from="UILayer/GameOverScreen/Panel/RestartButton" to="." method="reset"]
 [connection signal="pressed" from="UILayer/GameOverScreen/Panel/QuitButton" to="UILayer/GameOverScreen" method="_on_quit_button_pressed"]
