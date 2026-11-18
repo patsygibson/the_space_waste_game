@@ -18,3 +18,6 @@ func _on_body_entered(body):
 		body.update_score(score_value)
 		print("New Score: ", body.score)
 		die()
+	#if InventorySlot = null:
+		#InventorySlot.add_item_component
+		
