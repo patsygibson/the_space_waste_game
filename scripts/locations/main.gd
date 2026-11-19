@@ -60,6 +60,7 @@ func _process(delta):
 		reset()
 	if Input.is_action_just_pressed("Inventory"):
 		invt.visible = true
+		get_tree().paused = true
 		
 	if timer.wait_time > 0.5:      #setting timer to make difficulty
 		timer.wait_time -= delta* 0.005

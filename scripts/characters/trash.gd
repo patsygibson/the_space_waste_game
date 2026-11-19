@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	super(delta)
 	pass
 
+#When player enters trash, the trash disappears and increments score +1 
 func _on_body_entered(body):
 	if body is Player:
 		body.update_score(score_value)

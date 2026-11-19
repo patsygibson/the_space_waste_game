@@ -8,7 +8,7 @@ var speedMult = 1
 	
 func _process(delta):
 	print(Main.scroll_speed)
-	global_position.y += speed * delta * (Main.scroll_speed* 0.01)
+	global_position.y += speed * delta * (Main.scroll_speed * 0.01)
 func die():
 	queue_free()
 
