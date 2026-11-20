@@ -9,9 +9,9 @@ var speedMult = 1
 func _process(delta):
 	print(Main.scroll_speed)
 	global_position.y += speed * delta * (Main.scroll_speed * 0.01)
+
 func die():
 	queue_free()
-
 
 func _on_body_entered(body):
 	if body is Player:

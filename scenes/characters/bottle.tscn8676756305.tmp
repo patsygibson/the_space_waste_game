@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dg3xkc5m8iek5"]
+
+[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/characters/trash.tscn" id="1_724mw"]
+[ext_resource type="Script" uid="uid://dsaba1f1xc36g" path="res://scripts/characters/bottle.gd" id="2_cgf2s"]
+[ext_resource type="Texture2D" uid="uid://d2kjpv8eda5rf" path="res://assets/bottle.png" id="2_qr18b"]
+
+[node name="Bottle" unique_id=217626966 instance=ExtResource("1_724mw")]
+script = ExtResource("2_cgf2s")
+
+[node name="Sprite2D" parent="." index="0" unique_id=530132345]
+texture = ExtResource("2_qr18b")

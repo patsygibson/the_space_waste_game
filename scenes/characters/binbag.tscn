@@ -1,17 +1,11 @@
 [gd_scene format=3 uid="uid://cw8nnmj1ywidj"]
 
 [ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/characters/trash.tscn" id="1_xus3h"]
-[ext_resource type="Script" uid="uid://fjww3b3ions6" path="res://scripts/components/item_component.gd" id="2_bsbqa"]
+[ext_resource type="Script" uid="uid://bjccg0qntpl40" path="res://scripts/characters/binbag.gd" id="2_lg8r1"]
 [ext_resource type="Texture2D" uid="uid://blt5qqsdrbfk7" path="res://assets/binbag.png" id="2_odtvp"]
-[ext_resource type="Script" uid="uid://cf2813om6vdx1" path="res://scripts/resources/item_data_resource.gd" id="3_hx0cv"]
 
-[sub_resource type="Resource" id="Resource_wstdi"]
-script = ExtResource("3_hx0cv")
-metadata/_custom_type_script = "uid://cf2813om6vdx1"
-
-[node name="binbag" unique_id=217626966 instance=ExtResource("1_xus3h")]
-script = ExtResource("2_bsbqa")
-item = SubResource("Resource_wstdi")
+[node name="Binbag" unique_id=217626966 instance=ExtResource("1_xus3h")]
+script = ExtResource("2_lg8r1")
 
 [node name="Sprite2D" parent="." index="0" unique_id=530132345]
 texture = ExtResource("2_odtvp")

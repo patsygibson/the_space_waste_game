@@ -1,6 +1,5 @@
 extends Node2D
 class_name Main
-
 @export var enemy_scenes: Array[PackedScene] = []
 @onready var player_spawn_pos = $PlayerSpawnPos
 @onready var laser_container = $LaserContainer
@@ -9,7 +8,6 @@ class_name Main
 @onready var gos = $UILayer/GameOverScreen
 @onready var pb = $ParallaxBackground
 @onready var invt = $UILayer/Inventory
-
 @onready var laser_sound = $SFX/LaserSound
 @onready var hit_sound = $SFX/HitSound
 var player = null
@@ -20,7 +18,7 @@ static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	Game.set_inventory($UILayer/Inventory)
 	#fade animation
 	$Fade_transition.show()
 	$Fade_transition/AnimationPlayer.play("Fade_out")
@@ -55,13 +53,22 @@ func reset() -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
+		
 #If press input "R" it calls the method reload_current_scene which is inside get_tree.
 	elif Input.is_action_just_pressed("reset"):
 		reset()
-	if Input.is_action_just_pressed("Inventory"):
-		invt.visible = true
-		get_tree().paused = true
 		
+	if Input.is_action_just_pressed("Inventory"):
+		invt.visible = not invt.visible
+		
+		#trying to make it pause the background when the inventory is visible
+		#if not invt.visible:
+			#get_tree().paused = false
+		#else:
+			#get_tree().paused = true
+
+		
+	
 	if timer.wait_time > 0.5:      #setting timer to make difficulty
 		timer.wait_time -= delta* 0.005
 		scroll_speed+=speedModifier
