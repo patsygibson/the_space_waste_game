@@ -7,7 +7,6 @@ var speedMult = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 func _process(delta):
-	print(Main.scroll_speed)
 	global_position.y += speed * delta * (Main.scroll_speed * 0.01)
 
 func die():

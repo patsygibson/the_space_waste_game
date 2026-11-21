@@ -37,6 +37,7 @@ project/assembly_name="The_Space_Waste_Game"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://resources/": "purple",
 "res://scripts/": "red",
 "res://sounds/": "orange"
 }

@@ -17,6 +17,6 @@ func _on_body_entered(body):
 	if body is Player:
 		body.update_score(score_value)
 		print("New Score: ", body.score)
-		Game.inventory.set_item(%ItemComponent.item)
+		Game.inventory.add_item(%ItemComponent.item)
 		die()
 	

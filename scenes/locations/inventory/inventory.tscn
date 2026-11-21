@@ -61,6 +61,12 @@ columns = 4
 [node name="InventorySlot" parent="Panel/SlotContainer" unique_id=1348404098 instance=ExtResource("3_dcud0")]
 layout_mode = 2
 
+[node name="InventorySlot2" parent="Panel/SlotContainer" unique_id=1432761318 instance=ExtResource("3_dcud0")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Panel/SlotContainer" unique_id=1238906952 instance=ExtResource("3_dcud0")]
+layout_mode = 2
+
 [node name="InfoText" type="Label" parent="Panel" unique_id=432764372]
 layout_mode = 1
 anchors_preset = -1

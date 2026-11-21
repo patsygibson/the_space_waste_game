@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b286krm7m0vjc"]
 
 [ext_resource type="Script" uid="uid://cl5dvmilj8ac4" path="res://scripts/locations/inventory/inventoryslot.gd" id="1_mx1ta"]
-[ext_resource type="Texture2D" uid="uid://blt5qqsdrbfk7" path="res://assets/binbag.png" id="2_xd3h2"]
 [ext_resource type="FontFile" uid="uid://cvqf2pdgvvu5j" path="res://assets/SourceCodePro-VariableFont_wght.ttf" id="3_35ur1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
@@ -26,7 +25,6 @@ offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_xd3h2")
 expand_mode = 1
 
 [node name="QuantityText" type="Label" parent="Icon" unique_id=76091737]
