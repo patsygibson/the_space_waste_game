@@ -15,3 +15,22 @@ var inventory: Inventory
 
 func set_inventory(inv: Inventory) -> void:
 	inventory = inv
+
+#loops through all of the inventory slots
+func save_items() -> void:
+	if inventory == null: 
+		return
+	var saved_items: Array []
+	
+	for slot in inventory.slot:  #if a slot contains an item, save its resource path and quantity
+		if slot.item_data != null: 
+			saved_items.append( {"item_path": slot.item_data.resource_path, "quantity": slot.quantity})
+			
+	var save_file = FileAccess.open("user://inventory.data", FileAccess.WRITE)
+	
+	if save_file == null:
+		print(" could not save inventory")
+		return
+	save_file.store_var(saved_items)
+	save_file.close()
+	print("Invenotry Saved!")

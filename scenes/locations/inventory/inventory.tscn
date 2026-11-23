@@ -17,10 +17,10 @@ script = ExtResource("1_t87p6")
 
 [node name="Panel" type="Panel" parent="." unique_id=1050260692]
 layout_mode = 0
-offset_left = -267.0
-offset_top = -480.0
-offset_right = 271.0
-offset_bottom = 479.0
+offset_left = -218.0
+offset_top = -334.0
+offset_right = 200.0
+offset_bottom = 125.0
 
 [node name="Title" type="Label" parent="Panel" unique_id=579404055]
 layout_mode = 1
@@ -39,6 +39,7 @@ text = "Inventory"
 horizontal_alignment = 1
 
 [node name="SlotContainer" type="GridContainer" parent="Panel" unique_id=1351058681]
+custom_maximum_size = Vector2(1, 1)
 propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = 8
@@ -46,25 +47,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = -266.5
-offset_right = 231.0
-offset_bottom = 296.5
+offset_left = -82.0
+offset_top = -47.5
+offset_right = -81.0
+offset_bottom = -46.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 22
 theme_override_constants/v_separation = 16
-columns = 4
+columns = 3
 
 [node name="InventorySlot" parent="Panel/SlotContainer" unique_id=1348404098 instance=ExtResource("3_dcud0")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="Panel/SlotContainer" unique_id=1432761318 instance=ExtResource("3_dcud0")]
+[node name="InventorySlot2" parent="Panel/SlotContainer" unique_id=82245690 instance=ExtResource("3_dcud0")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="Panel/SlotContainer" unique_id=1238906952 instance=ExtResource("3_dcud0")]
+[node name="InventorySlot3" parent="Panel/SlotContainer" unique_id=1658501488 instance=ExtResource("3_dcud0")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Panel/SlotContainer" unique_id=1588177382 instance=ExtResource("3_dcud0")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Panel/SlotContainer" unique_id=763789044 instance=ExtResource("3_dcud0")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Panel/SlotContainer" unique_id=642464911 instance=ExtResource("3_dcud0")]
 layout_mode = 2
 
 [node name="InfoText" type="Label" parent="Panel" unique_id=432764372]

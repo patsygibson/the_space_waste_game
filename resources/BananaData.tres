@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dmxie0pot5sb6"]
+
+[ext_resource type="Texture2D" uid="uid://d3tuts68hpyku" path="res://assets/Banana.png" id="1_2p5b2"]
+[ext_resource type="Script" uid="uid://cf2813om6vdx1" path="res://scripts/locations/item_data_resource.gd" id="1_s7qyt"]
+
+[resource]
+script = ExtResource("1_s7qyt")
+item_name = "Banana"
+icon = ExtResource("1_2p5b2")
+quantity = 1
+category = "Food"
+metadata/_custom_type_script = "uid://cf2813om6vdx1"

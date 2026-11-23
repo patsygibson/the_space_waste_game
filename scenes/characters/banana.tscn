@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b4ln2xwvso8yw"]
+
+[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/characters/trash.tscn" id="1_00hed"]
+[ext_resource type="Script" uid="uid://vgdnoomkuavb" path="res://scripts/characters/banana.gd" id="2_8u2og"]
+[ext_resource type="Resource" uid="uid://dmxie0pot5sb6" path="res://resources/BananaData.tres" id="3_h55kg"]
+[ext_resource type="Texture2D" uid="uid://d3tuts68hpyku" path="res://assets/Banana.png" id="3_ux4k3"]
+
+[node name="Banana" unique_id=217626966 instance=ExtResource("1_00hed")]
+script = ExtResource("2_8u2og")
+
+[node name="Sprite2D" parent="." index="0" unique_id=530132345]
+scale = Vector2(1, 1)
+texture = ExtResource("3_ux4k3")
+
+[node name="ItemComponent" parent="." index="4" unique_id=982349613]
+item = ExtResource("3_h55kg")

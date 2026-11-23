@@ -1,5 +1,5 @@
 class_name InventorySlot
-extends Node
+extends Control
 
 var item_data: ItemData
 var quantity: int = 0
@@ -47,3 +47,21 @@ func update_quantity_text() -> void:
 		quantity_text.text = ""         #explain this
 	else:
 		quantity_text.text = str(quantity)  #explain this
+		
+		
+#NEW FUNCTION SO WE CAN GET THE ITEMS AND DRAG THEM INTO THE BIN IN TRASH LAB
+func _get_drag_data(_at_position: Vector2):
+		
+		if item_data == null:
+			return null
+		
+		var data = {"item": item_data, "source_slot": self}
+		
+		var preview = TextureRect.new()
+		preview.texture = item_data.icon
+		preview.custom_minimum_size = Vector2(48, 48)
+		preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		
+		set_drag_preview(preview)
+		return data
