@@ -18,7 +18,9 @@ static var scroll_speed = 100 #for background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Game.set_inventory($UILayer/Inventory)
+	Game.set_inventory($UILayer/Inventory)   #These functions can be found in Game Manager
+	Game.load_items()
+	
 	#fade animation
 	$Fade_transition.show()
 	$Fade_transition/AnimationPlayer.play("Fade_out")

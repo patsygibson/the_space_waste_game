@@ -68,18 +68,18 @@ offset_bottom = -107.0
 [node name="Food Bin" type="Control" parent="." unique_id=1289281912]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 73.00001
-offset_top = 290.00006
-offset_right = 113.00001
-offset_bottom = 330.00006
+offset_left = 63.000008
+offset_top = 559.0
+offset_right = 103.00001
+offset_bottom = 599.0
 scale = Vector2(3.1840374, 4.4309816)
 script = ExtResource("3_eycxf")
 
 [node name="Plastic Bin" type="Control" parent="." unique_id=1690104384]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 319.99997
-offset_top = 305.0
-offset_right = 359.99997
-offset_bottom = 345.0
+offset_left = 322.00003
+offset_top = 559.0
+offset_right = 362.00003
+offset_bottom = 599.0
 scale = Vector2(3.1840374, 4.4309816)

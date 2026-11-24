@@ -18,5 +18,6 @@ func _on_body_entered(body):
 		body.update_score(score_value)
 		print("New Score: ", body.score)
 		Game.inventory.add_item(%ItemComponent.item)
+		Game.save_items() #Save item function found within Game Manager script
 		die()
 	

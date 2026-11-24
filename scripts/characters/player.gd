@@ -43,9 +43,8 @@ func update_score(value: int) -> void:
 	if score_label:
 		score_label.text = "Waste: " + str(score)
 		
-	if score >= 50:
-		get_tree().change_scene_to_file("res://scenes/locations/trash_lab.tscn")
+	if score >= 5:
+		#call_deferred("change_scene_to_file", "res://scenes/locations/trash_lab.tscn") #Telling Godot to wait as the score becomes that number, it's also loading the next scene
+		#add func from game manager
+		Game.change_scene("res://scenes/locations/trash_lab.tscn")
 	
-	
-	#else:
-		#print("NO SCORE LABEL ASSIGNED")
