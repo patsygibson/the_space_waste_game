@@ -51,9 +51,14 @@ func update_quantity_text() -> void:
 		
 #NEW FUNCTION SO WE CAN GET THE ITEMS AND DRAG THEM INTO THE BIN IN TRASH LAB
 func _get_drag_data(_at_position: Vector2):
+		print("DRAG STARTED!!!!!!!!!!")
+		print("item data: ", item_data)
 		
 		if item_data == null:
+			print("No item data in this slot!!!")
 			return null
+		print("SENDING ITEM: ", item_data.item_name)
+		print("Seding category: ", item_data.category)
 		
 		var data = {"item": item_data, "source_slot": self}
 		

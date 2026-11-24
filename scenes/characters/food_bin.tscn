@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dc2sw7j5uhwu7"]
+
+[ext_resource type="Script" uid="uid://cvgp35t6saugc" path="res://scripts/characters/food_bin.gd" id="1_0wyo8"]
+[ext_resource type="Texture2D" uid="uid://jp2dkpyhoxwv" path="res://assets/Food_Bin.png" id="1_yu0rw"]
+
+[node name="Food bin" type="Control" unique_id=1753618638]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0wyo8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=503168383]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -107.5
+offset_right = 95.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yu0rw")
