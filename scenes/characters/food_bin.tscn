@@ -1,29 +1,33 @@
 [gd_scene format=3 uid="uid://dc2sw7j5uhwu7"]
 
 [ext_resource type="Script" uid="uid://cvgp35t6saugc" path="res://scripts/characters/food_bin.gd" id="1_0wyo8"]
-[ext_resource type="Texture2D" uid="uid://jp2dkpyhoxwv" path="res://assets/Food_Bin.png" id="1_yu0rw"]
+[ext_resource type="Texture2D" uid="uid://by33i2qmqcjgq" path="res://assets/food_bin.png" id="2_0wyo8"]
 
 [node name="Food bin" type="Control" unique_id=1753618638]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1.0
+anchor_left = 0.3
+anchor_top = 0.65900004
+anchor_right = 0.3
+anchor_bottom = 0.65900004
+offset_left = -55.0
+offset_top = -62.640015
+offset_right = 76.0
+offset_bottom = 90.359985
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0wyo8")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=503168383]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -107.5
-offset_right = 95.0
-offset_bottom = 109.0
+anchors_preset = -1
+anchor_left = 0.45000002
+anchor_top = 0.702
+anchor_right = 0.45000002
+anchor_bottom = 0.702
+offset_left = -66.75
+offset_top = -94.40598
+offset_right = 66.25
+offset_bottom = 48.594025
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yu0rw")
+texture = ExtResource("2_0wyo8")

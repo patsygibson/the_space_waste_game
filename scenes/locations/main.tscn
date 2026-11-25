@@ -53,7 +53,7 @@ alpha_curve = SubResource("CurveTexture_eb6dy")
 
 [node name="Main" type="Node2D" unique_id=1683689896]
 script = ExtResource("1_0wfyh")
-enemy_scenes = Array[PackedScene]([ExtResource("2_ke8vb"), ExtResource("7_fxkum"), ExtResource("2_jyhfs"), ExtResource("8_tipki"), ExtResource("7_o6xl0"), ExtResource("6_ya4ey"), ExtResource("5_choun")])
+enemy_scenes = Array[PackedScene]([ExtResource("2_ke8vb"), ExtResource("7_fxkum"), ExtResource("2_jyhfs"), ExtResource("8_tipki"), ExtResource("6_ya4ey"), ExtResource("5_choun"), ExtResource("7_o6xl0")])
 metadata/_edit_vertical_guides_ = [-434.0]
 
 [node name="SFX" type="Node2D" parent="." unique_id=1057939023]

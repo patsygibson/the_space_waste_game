@@ -17,7 +17,12 @@ func _on_body_entered(body):
 	if body is Player:
 		body.update_score(score_value)
 		print("New Score: ", body.score)
+		
+		print("COLLECTING ITEM: ",%ItemComponent.item.item_name)
+		print("ITEM RESOURCE PATH: ",%ItemComponent.item.resource_path)
 		Game.inventory.add_item(%ItemComponent.item)
+		
+		print("SAVING INVENTORY NOW!")
 		Game.save_items() #Save item function found within Game Manager script
 		die()
 	

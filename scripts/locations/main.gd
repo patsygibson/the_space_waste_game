@@ -48,7 +48,7 @@ func save_game() -> void:
 
 
 func reset() -> void:
-	scroll_speed = default_speed
+	scroll_speed = default_speed  #When game resets, the scroll speed starts back at the default speed (starts slow again)
 	get_tree().reload_current_scene()
 
 #If press input "esc" it calls the method quit that is inside get_tree.
@@ -70,13 +70,13 @@ func _process(delta):
 			#get_tree().paused = true
 
 		
-	
+	#Incremting the speed as the game goes in 
 	if timer.wait_time > 0.5:      #setting timer to make difficulty
 		timer.wait_time -= delta* 0.005
 		scroll_speed+=speedModifier
 	elif timer.wait_time < 0.5:
 		timer.wait_time = 0.5
-	
+	#The scroll goes faster the longer you stay in the game
 	pb.scroll_offset.y += delta*scroll_speed
 	if pb.scroll_offset.y >= 960:
 		pb.scroll_offset.y = 0

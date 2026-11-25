@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://chcgk36o0tccf"]
+
+[ext_resource type="Script" uid="uid://bg3n87eosvhfe" path="res://scripts/characters/plastic_bin.gd" id="1_y5tmf"]
+[ext_resource type="Texture2D" uid="uid://8qv5dpfomxbi" path="res://assets/plastic_bin.png" id="2_3n6vf"]
+
+[node name="PlasticBin" type="Control" unique_id=105976069]
+layout_mode = 3
+anchor_left = 0.74200004
+anchor_top = 0.66200006
+anchor_right = 0.74200004
+anchor_bottom = 0.66200006
+offset_left = -64.68002
+offset_top = -69.52008
+offset_right = 64.31998
+offset_bottom = 69.47992
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y5tmf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1008960500]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45200002
+anchor_top = 0.611
+anchor_right = 0.45200002
+anchor_bottom = 0.611
+offset_left = -59.308014
+offset_top = -81.92898
+offset_right = 72.89197
+offset_bottom = 56.07103
+texture = ExtResource("2_3n6vf")

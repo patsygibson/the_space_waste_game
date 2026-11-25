@@ -20,8 +20,10 @@ func _change_scene(scene_path: String) -> void:
 
 #loops through all of the inventory slots
 func save_items() -> void:
-	if inventory == null: 
+	if inventory == null:
+		print("ERROR: No inventory registered") 
 		return
+		
 	var saved_items: Array = []
 	
 	for slot in inventory.slots:  #if a slot contains an item, save its resource path and quantity
@@ -31,11 +33,14 @@ func save_items() -> void:
 	var save_file = FileAccess.open("user://inventory.data", FileAccess.WRITE)
 	
 	if save_file == null:
-		print(" could not save inventory")
+		print(" could not save inventory!")
 		return
+		
 	save_file.store_var(saved_items)
 	save_file.close()
-	print("Invenotry Saved!")
+	
+	print("Inventory Saved Successfully!")
+	print("Number of saved items:", saved_items.size())
 
 func load_items() -> void:
 	
@@ -51,7 +56,8 @@ func load_items() -> void:
 	var saved_items = save_file.get_var()
 	save_file.close()
 	
-	for slot in inventory.slots:  #Clearing the inventory first before restoring saved items
+	for slot in inventory.slots:
+		#print("Clearing invenotry")  #Clearing the inventory first before restoring saved items
 		slot.set_item(null)
 	
 	#Restore saved items
@@ -60,6 +66,7 @@ func load_items() -> void:
 		
 		if item == null:
 			print(" could not load: ", saved_item["item_path"])
+			continue
 		
 		for i in range(saved_item["quantity"]):
 			inventory.add_item(item)

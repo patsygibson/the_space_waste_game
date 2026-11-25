@@ -9,6 +9,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if not data is Dictionary:  #If the item does not have any of the familiar names
 		print("Food bin: Data is not a dictionary")
 		return false 
+	
 	var item = data.get("item")
 	
 	if item == null:
@@ -17,7 +18,12 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	print("Food Bin: Item name: ", item.item_name)
 	print("Food Bin: Item category: ", item.category)
 	
-	return item.category == "FOOD"
+	var accepted = item.category.to_upper() == "FOOD"
+	print("WE HAVE: ", item.category.to_upper())
+	print("IS IT ACCEPTED? ", accepted)
+	
+	return accepted
+	
 	
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var item = data["item"]
@@ -27,5 +33,5 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	
 	Game.save_items()
 	
-	print(item.item_name, " was recycled!")
+	print(item.item_name, " was recycled in the food bin!")
 	
