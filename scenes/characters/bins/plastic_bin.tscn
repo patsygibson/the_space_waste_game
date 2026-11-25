@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chcgk36o0tccf"]
 
-[ext_resource type="Script" uid="uid://bg3n87eosvhfe" path="res://scripts/characters/plastic_bin.gd" id="1_y5tmf"]
+[ext_resource type="Script" uid="uid://bg3n87eosvhfe" path="res://scripts/characters/bins/plastic_bin.gd" id="1_y5tmf"]
 [ext_resource type="Texture2D" uid="uid://8qv5dpfomxbi" path="res://assets/plastic_bin.png" id="2_3n6vf"]
 
 [node name="PlasticBin" type="Control" unique_id=105976069]

@@ -3,8 +3,9 @@
 [ext_resource type="FontFile" uid="uid://dobv5o81pq35c" path="res://assets/PressStart2P-Regular.ttf" id="1_c2u1v"]
 [ext_resource type="Script" uid="uid://4nsq8b3pj06n" path="res://scripts/locations/options.gd" id="1_yjkok"]
 [ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_2iy26"]
-[ext_resource type="Script" uid="uid://px1rmpno6whi" path="res://scripts/characters/musicslider.gd" id="3_gcwg0"]
+[ext_resource type="Script" uid="uid://px1rmpno6whi" path="res://scripts/characters/audio/musicslider.gd" id="3_gcwg0"]
 [ext_resource type="AudioStream" uid="uid://s4qygn1g3mns" path="res://sounds/arpmedia-retro-arcade-game-music-577821.mp3" id="4_6eqrd"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu1al"]
 

@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://yxwnm5h5m2ce" path="res://assets/background.png" id="2_258c2"]
 [ext_resource type="AudioStream" uid="uid://76ucu0quxm3r" path="res://sounds/sfx_laser1.ogg" id="2_hdiwy"]
 [ext_resource type="AudioStream" uid="uid://odam7v8jjphq" path="res://sounds/sfx_lose.ogg" id="3_5a2qn"]
-[ext_resource type="PackedScene" uid="uid://dqxptlgje4sl5" path="res://scenes/characters/player.tscn" id="3_258c2"]
+[ext_resource type="PackedScene" uid="uid://dqxptlgje4sl5" path="res://scenes/characters/player/player.tscn" id="3_258c2"]
 [ext_resource type="PackedScene" uid="uid://kxseiucmbrmw" path="res://scenes/animation/fade_transition.tscn" id="3_rdtk2"]
-[ext_resource type="PackedScene" uid="uid://dscxlhdnqbtj0" path="res://scenes/characters/enemyship.tscn" id="5_uulkt"]
+[ext_resource type="PackedScene" uid="uid://dscxlhdnqbtj0" path="res://scenes/characters/enemies/enemyship.tscn" id="5_uulkt"]
+
 
 [node name="Battle_scene" type="Node2D" unique_id=1136460979]
 script = ExtResource("1_d6t36")

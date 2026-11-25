@@ -30,3 +30,7 @@ func _on_fade_timer_timeout():
 	
 func _on_instructions_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/locations/instructions_panel.tscn")
+
+
+func _on_new_game_pressed() -> void:
+	Game.reset_game()

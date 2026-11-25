@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3b1xthyrxuae"]
+
+[ext_resource type="PackedScene" uid="uid://dvkg13qbh3dfe" path="res://scenes/characters/enemies/bigbrown.tscn" id="1_hhdej"]
+[ext_resource type="Script" uid="uid://coqmigde0v30j" path="res://scripts/characters/items/trash.gd" id="2_3ahj2"]
+[ext_resource type="Texture2D" uid="uid://cyx71lpsg1leq" path="res://assets/plastic.png" id="3_py3ta"]
+[ext_resource type="PackedScene" uid="uid://cfjh7nbg2wwl7" path="res://scenes/components/item_component.tscn" id="4_cl7ta"]
+[ext_resource type="Resource" uid="uid://c4vb1skcx34h8" path="res://resources/TrashData.tres" id="5_8yqsu"]
+
+[node name="Trash" unique_id=217626966 instance=ExtResource("1_hhdej")]
+script = ExtResource("2_3ahj2")
+score_value = 1
+
+[node name="Sprite2D" parent="." index="0" unique_id=530132345]
+scale = Vector2(2, 2)
+texture = ExtResource("3_py3ta")
+
+[node name="ItemComponent" parent="." index="4" unique_id=982349613 instance=ExtResource("4_cl7ta")]
+unique_name_in_owner = true
+item = ExtResource("5_8yqsu")

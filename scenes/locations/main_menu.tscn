@@ -48,17 +48,32 @@ theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Start
 "
 
-[node name="Options" type="Button" parent="Panel" unique_id=309112792]
+[node name="New Game" type="Button" parent="Panel" unique_id=216037742]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.50600004
-anchor_top = 0.522
+anchor_top = 0.52500004
 anchor_right = 0.50600004
-anchor_bottom = 0.522
-offset_left = -157.25201
-offset_top = -28.598022
-offset_right = 156.74799
-offset_bottom = 28.401978
+anchor_bottom = 0.52500004
+offset_left = -153.25201
+offset_top = -29.475037
+offset_right = 152.74799
+offset_bottom = 28.524963
+theme_override_fonts/font = ExtResource("2_ekxnf")
+text = "New Game
+"
+
+[node name="Options" type="Button" parent="Panel" unique_id=309112792]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.614
+anchor_right = 0.49800003
+anchor_bottom = 0.614
+offset_left = -156.91602
+offset_top = -28.82605
+offset_right = 157.08398
+offset_bottom = 28.17395
 theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Options
 "
@@ -66,14 +81,14 @@ text = "Options
 [node name="Quit" type="Button" parent="Panel" unique_id=191084529]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.689
-anchor_right = 0.499
-anchor_bottom = 0.689
-offset_left = -152.45801
-offset_top = -28.751038
-offset_right = 156.54199
-offset_bottom = 28.248962
+anchor_left = 0.5
+anchor_top = 0.76900005
+anchor_right = 0.5
+anchor_bottom = 0.76900005
+offset_left = -154.0
+offset_top = -28.47107
+offset_right = 155.0
+offset_bottom = 28.52893
 theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Quit
 "
@@ -81,14 +96,14 @@ text = "Quit
 [node name="Instructions" type="Button" parent="Panel" unique_id=37418625]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.60700005
-anchor_right = 0.5
-anchor_bottom = 0.60700005
-offset_left = -152.0
-offset_top = -28.113037
-offset_right = 157.0
-offset_bottom = 28.886963
+anchor_left = 0.497
+anchor_top = 0.69200003
+anchor_right = 0.497
+anchor_bottom = 0.69200003
+offset_left = -154.374
+offset_top = -28.628052
+offset_right = 154.626
+offset_bottom = 28.371948
 theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Instructions
 
@@ -104,6 +119,7 @@ offset_right = 541.0
 [node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=2008763469]
 
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/Instructions" to="." method="_on_instructions_pressed"]

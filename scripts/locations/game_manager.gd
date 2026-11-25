@@ -6,6 +6,19 @@ var new_location: Node2D
 var current_location_index: int = 0
 var inventory: Inventory
 
+
+func reset_game() -> void:
+	if inventory == null:
+		print("NO INVENTORY REGISTERED...")
+		return
+		
+	for slot in inventory.slots:  #clearing every inventory slot
+		slot.set_item(null)       #by setting it to null
+	
+	save_items()    #The save function then finds no occupied slots, so it writes an empty array into inventory.data replacing the previous saved items.
+	
+	print("NEW GAME STARTED. INVENTORY CLEARED!")
+ 
 func set_inventory(inv: Inventory) -> void:
 	inventory = inv
 	

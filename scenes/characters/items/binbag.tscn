@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cw8nnmj1ywidj"]
 
-[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/characters/trash.tscn" id="1_xus3h"]
-[ext_resource type="Script" uid="uid://bjccg0qntpl40" path="res://scripts/characters/binbag.gd" id="2_lg8r1"]
+[ext_resource type="PackedScene" uid="uid://3b1xthyrxuae" path="res://scenes/characters/items/trash.tscn" id="1_xus3h"]
+[ext_resource type="Script" uid="uid://bjccg0qntpl40" path="res://scripts/characters/items/binbag.gd" id="2_lg8r1"]
 [ext_resource type="Texture2D" uid="uid://blt5qqsdrbfk7" path="res://assets/binbag.png" id="2_odtvp"]
 [ext_resource type="Resource" uid="uid://cn44bs06psisx" path="res://resources/BinbagData.tres" id="4_bsbqa"]
 
