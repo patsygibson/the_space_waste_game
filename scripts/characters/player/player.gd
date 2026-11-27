@@ -4,6 +4,7 @@ extends CharacterBody2D
 signal laser_shot(laser_scene, location)
 signal killed
 
+@export var fuel: int = 0 
 @export var speed = 300.0
 @export var score_label: Label
 @export var score = 0
@@ -48,3 +49,7 @@ func update_score(value: int) -> void:
 		#add func from game manager
 		Game.change_scene("res://scenes/locations/trash_lab.tscn")
 	
+func add_fuel(amount: int) -> void:  
+	fuel += amount                #Fuel is the variable (which is declared at the top. The amount is what is added when this function is called.
+	print("Fuel collected: ", amount)
+	print("Total fuel: ", fuel)

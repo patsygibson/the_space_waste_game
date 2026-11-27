@@ -30,7 +30,6 @@ func check_inventory_empty() -> void:  #Inventory is empty but when every slot i
 			break
 	$UILayer/Panel/Continue.visible = inventory_empty #it's set to visible once the inventory has been emptied. 
 
-
 func _on_continue_pressed() -> void:
 	print("BUTTON PRESSED")
 	get_tree().change_scene_to_file("res://scenes/locations/cutscene.tscn")
