@@ -60,15 +60,7 @@ func _process(delta):
 	elif Input.is_action_just_pressed("reset"):
 		reset()
 		
-	if Input.is_action_just_pressed("Inventory"):
-		invt.visible = not invt.visible
-		
-		#trying to make it pause the background when the inventory is visible
-		#if not invt.visible:
-			#get_tree().paused = false
-		#else:
-			#get_tree().paused = true
-
+	#Inventory input is now in game manager
 		
 	#Incremting the speed as the game goes in 
 	if timer.wait_time > 0.5:      #setting timer to make difficulty

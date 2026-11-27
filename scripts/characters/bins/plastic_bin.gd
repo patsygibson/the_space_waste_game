@@ -1,5 +1,7 @@
+class_name PlasticBin
 extends Control
 
+signal dropped
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,5 +36,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	source_slot.remove_item_component()
 	
 	Game.save_items()
+	dropped.emit()
 	
 	print(item.item_name, " was recycled in the plastic bin!")

@@ -1,4 +1,7 @@
+class_name FoodBin
 extends Control
+
+signal dropped
 
 func _ready() -> void:
 	print("FOOD BIN IS HERE!!!!")
@@ -10,7 +13,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 		print("Food bin: Data is not a dictionary")
 		return false 
 	
-	var item = data.get("item")
+	var item = data.get("item") as ItemData
 	
 	if item == null:
 		print("Food bin:no item found")
@@ -25,6 +28,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return accepted
 	
 	
+	
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var item = data["item"]
 	var source_slot = data["source_slot"]
@@ -32,6 +36,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	source_slot.remove_item_component()
 	
 	Game.save_items()
+	
+	dropped.emit()
 	
 	print(item.item_name, " was recycled in the food bin!")
 	

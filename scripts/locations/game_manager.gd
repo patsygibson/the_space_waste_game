@@ -28,9 +28,17 @@ func change_scene(scene_path: String) -> void:
 func _change_scene(scene_path: String) -> void:
 	get_tree().change_scene_to_file(scene_path)
 	
+#Making everything pause when the inventory is opened but inventory doesn't pause because it's being called in game manager (it's process mode is set to Always. Whereas Main is set to pausable so that will pause when this function is called).
+func _unhandled_input(event:InputEvent) -> void:
+	if event.is_action_pressed("Inventory"):
+		inventory.visible = not inventory.visible  #toggling 
+		
+	if not inventory.visible:   #if inventory is not visible, the tree won't be paused ;else it will. 
+		get_tree().paused = false
+	else: 
+		get_tree().paused = true
 	
-
-
+	
 #loops through all of the inventory slots
 func save_items() -> void:
 	if inventory == null:

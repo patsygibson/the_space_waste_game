@@ -8,4 +8,5 @@ script = ExtResource("2_mq3bf")
 item_name = "Bottle"
 icon = ExtResource("1_3n4q8")
 quantity = 1
+fuel_amount = 4
 metadata/_custom_type_script = "uid://cf2813om6vdx1"

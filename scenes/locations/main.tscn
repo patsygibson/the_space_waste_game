@@ -67,6 +67,7 @@ stream = ExtResource("8_jkv2x")
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1455782672]
 
 [node name="Inventory" parent="UILayer" unique_id=313939651 instance=ExtResource("15_pknp3")]
+process_mode = 1
 visible = false
 offset_left = 1.0
 offset_right = 1.0

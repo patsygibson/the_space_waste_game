@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dc2sw7j5uhwu7" path="res://scenes/characters/bins/food_bin.tscn" id="3_4m7e2"]
 [ext_resource type="PackedScene" uid="uid://chcgk36o0tccf" path="res://scenes/characters/bins/plastic_bin.tscn" id="4_4m7e2"]
 
-[node name="Trash Lab" type="Node2D" unique_id=497485094]
+[node name="Trash Lab" type="Node2D" unique_id=497485094 node_paths=PackedStringArray("food_bin", "plastic_bin")]
+process_mode = 3
 script = ExtResource("1_rthcw")
+food_bin = NodePath("UILayer/Food bin")
+plastic_bin = NodePath("UILayer/PlasticBin")
 
 [node name="BG" type="TextureRect" parent="." unique_id=383442943]
 visible = false
@@ -18,48 +21,61 @@ texture = ExtResource("2_7ql6m")
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=28576614]
 
 [node name="Panel" type="Panel" parent="UILayer" unique_id=1180783446]
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 539.0
-offset_bottom = 960.0
+offset_top = 4.0
+offset_right = 540.0
+offset_bottom = 963.0
 
 [node name="Instructions" type="Label" parent="UILayer/Panel" unique_id=1257996976]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.13000001
-anchor_top = 0.878
+anchor_left = 0.133
+anchor_top = 0.78400004
 anchor_right = 0.86700004
-anchor_bottom = 0.929
-offset_left = -0.20000458
-offset_top = -0.0020141602
-offset_right = -5.180023
-offset_bottom = 0.08898926
+anchor_bottom = 0.86200005
+offset_left = 0.1800003
+offset_top = 0.14398193
+offset_right = -3.1800232
+offset_bottom = 0.34197998
 text = "This is the Trash Lab! - Turn your waste into energy
  by placing them into the correct bins! "
 horizontal_alignment = 1
 
+[node name="Continue" type="Button" parent="UILayer/Panel" unique_id=1402343545]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.89500004
+anchor_right = 0.707
+anchor_bottom = 0.93200004
+offset_left = -0.18000793
+offset_top = -0.3050537
+offset_right = 0.22000122
+offset_bottom = 0.2119751
+text = "Continue... >"
+
 [node name="Food bin" parent="UILayer" unique_id=1753618638 instance=ExtResource("3_4m7e2")]
-anchor_left = 0.256
-anchor_top = 0.726
-anchor_right = 0.256
-anchor_bottom = 0.726
-offset_left = -58.240005
-offset_top = -64.96002
-offset_right = 56.759995
-offset_bottom = 78.03998
+anchor_left = 0.273
+anchor_top = 0.674
+anchor_right = 0.273
+anchor_bottom = 0.674
+offset_left = -57.42
+offset_top = -58.04004
+offset_right = 57.58
+offset_bottom = 84.95996
 grow_horizontal = 1
 grow_vertical = 1
 mouse_filter = 2
 
 [node name="PlasticBin" parent="UILayer" unique_id=105976069 instance=ExtResource("4_4m7e2")]
-anchor_left = 0.75000006
-anchor_top = 0.72900003
-anchor_right = 0.75000006
-anchor_bottom = 0.72900003
-offset_left = -65.00003
-offset_top = -47.840027
-offset_right = 54.99997
-offset_bottom = 73.15997
+anchor_left = 0.72
+anchor_top = 0.693
+anchor_right = 0.72
+anchor_bottom = 0.693
+offset_left = -59.80002
+offset_top = -60.28003
+offset_right = 60.19998
+offset_bottom = 60.71997
 
 [node name="Inventory" parent="UILayer" unique_id=313939651 instance=ExtResource("2_eycxf")]
 visible = false
@@ -67,3 +83,5 @@ offset_left = 1.0
 offset_top = -107.0
 offset_right = 1.0
 offset_bottom = -107.0
+
+[connection signal="pressed" from="UILayer/Panel/Continue" to="." method="_on_continue_pressed"]

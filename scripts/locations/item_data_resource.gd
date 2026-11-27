@@ -5,5 +5,6 @@ extends Resource
 @export var icon: CompressedTexture2D
 @export var quantity: int
 @export var max_stack_size: int = 10
+@export var fuel_amount: int = 0
 
 @export_enum("FOOD", "PLASTIC") var category: String = "PLASTIC"  # = "Plastic" by default
